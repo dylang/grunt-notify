@@ -1,7 +1,7 @@
 {
   "name": "grunt-notify",
-  "description": "The best grunt plugin ever.",
-  "version": "0.1.0",
+  "description": "Automatic OSX Native Notifications when Grunt tasks fail.",
+  "version": "0.1.1",
   "homepage": "https://github.com/dgreene/grunt-notify",
   "author": {
     "name": "Dylan Greene",
