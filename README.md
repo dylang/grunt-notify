@@ -19,15 +19,26 @@ grunt.loadNpmTasks('grunt-notify');
 ## Automatic behavior
 By including `grunt.loadNpmTasks('grunt-notify');` in your `Gruntfile.js` you will automatically get notifications when Grunt has warnings or errors!
 
+```js
+grunt.initConfig({
+  // no special task config is necessary!
+});
+
+// This is all you need
+grunt.loadNpmTasks('grunt-notify');
+```
+
 [![Notify with Nodeunit](https://github.com/dylang/grunt-notify/raw/master/screenshots/nodeunit.png)]
 
 ## Configuring the automatic behavior
-These are the defaults. Any can be changed.
+If you want to make changes, such as change the title of the Notification or disable it, you can do so by configuring a `notify_hooks` task. *This is 100% optional*.
+To make Grunt always run your config changes add `grunt.task.run('notify_hooks');` to your `Gruntfile`.
 
 ```js
 grunt.initConfig({
   notify_hooks: {
     options: {
+        //These are the defaults. Including them in this config is optional.
         warnHookEnabled:        true,
         errorHookEnabled:       true,
 
@@ -49,10 +60,10 @@ grunt.task.run('notify_hooks');
 
 [![JSHint Example](https://github.com/dylang/grunt-notify/raw/master/screenshots/jshint.png)]
 
-## Arbitrary figuring Notification Messages
+## Show Notification Messages when you want to
 
-### notify Muti-task
-Lets say you want a notification `watch` detects a change or when uploading to `s3` is complete. That's very easy to do:
+### The notify MutiTask
+Show a message whenever you want!
 
 ```js
 grunt.initConfig({
@@ -69,16 +80,18 @@ grunt.initConfig({
         subtitle: '' // optional, kinda a lot for a message
       }
     },
-    helloWorld: {
+    server: {
       options: {
-        message: 'Hello world!'
+        message: 'Server is ready!'
       }
     }
-  },
+  }
 });
 
 grunt.loadNpmTasks('grunt-notify');
-grunt.registerTask('default', 'notify:helloWorld');
+
+// simplified example
+grunt.registerTask('server', ['uglify', 'sass', 'server', 'notify:server']);
 ```
 
 [![Watch example](https://github.com/dylang/grunt-notify/raw/master/screenshots/watch.png)]
