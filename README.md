@@ -80,6 +80,7 @@ grunt.initConfig({
 grunt.loadNpmTasks('grunt-notify');
 grunt.registerTask('default', 'notify:helloWorld');
 ```
+
 [![Watch example](https://github.com/dylang/grunt-notify/raw/master/screenshots/watch.png)]
 
 ### Options
