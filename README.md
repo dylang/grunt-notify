@@ -28,7 +28,7 @@ grunt.initConfig({
 grunt.loadNpmTasks('grunt-notify');
 ```
 
-[![Notify with Nodeunit](https://github.com/dylang/grunt-notify/raw/master/screenshots/nodeunit.png)]
+[![Notify with Nodeunit](https://github.com/dylang/grunt-notify/raw/master/screenshots/nodeunit.png)](https://github.com/dylang/grunt-notify)
 
 ## Configuring the automatic behavior
 If you want to make changes, such as change the title of the Notification or disable it, you can do so by configuring a `notify_hooks` task. *This is 100% optional*.
@@ -58,7 +58,7 @@ grunt.loadNpmTasks('grunt-notify');
 grunt.task.run('notify_hooks');
 ```
 
-[![JSHint Example](https://github.com/dylang/grunt-notify/raw/master/screenshots/jshint.png)]
+[![JSHint Example](https://github.com/dylang/grunt-notify/raw/master/screenshots/jshint.png)](https://github.com/dylang/grunt-notify)
 
 ## Show Notification Messages when you want to
 
@@ -94,7 +94,8 @@ grunt.loadNpmTasks('grunt-notify');
 grunt.registerTask('server', ['uglify', 'sass', 'server', 'notify:server']);
 ```
 
-[![Watch example](https://github.com/dylang/grunt-notify/raw/master/screenshots/watch.png)]
+[![Watch example](https://github.com/dylang/grunt-notify/raw/master/screenshots/watch.png)](https://github.com/dylang/grunt-notify)
+
 
 ### Options
 * `title` (_optional_): Notification title
