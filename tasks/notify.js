@@ -8,28 +8,7 @@
 
 'use strict';
 
-var ChildProcess = require('child_process');
-
-// known terminal apps.
-var TERMINAL_APPS = {
-  'iTerm.app': 'com.googlecode.iterm2',
-  Apple_Terminal: 'com.apple.Terminal'
-};
-
-// OSX notification system doesn't have an API we can hit so we are using
-// Terminal Notifier created by Eloy Durán https://github.com/alloy/terminal-notifier
-var TERMINAL_NOTIFIER_APP = __dirname + '/../lib/terminal-notifier/terminal-notifier.app/Contents/MacOS/terminal-notifier';
-
-// program to bring into focus when the user clicks the notification
-var TERMINAL_PROGRAM = TERMINAL_APPS[process.env.TERM_PROGRAM];
-
-// This only works on macs
-var isMac = process.platform === 'darwin';
-
-// Some characters are special in bash like $
-function escapeForCommandLine(str) {
-  return str && typeof str === 'string' && str.replace(/([$"])/g, '\\$1');
-}
+var growl = require('growl');
 
 /**
  * Public function to notify
@@ -37,25 +16,15 @@ function escapeForCommandLine(str) {
  * @param [cb] - optional callback. function(err, stdout, stderr)
  */
 function notify(options, cb) {
-  if (!isMac || !options.message) {
+  if (!options.message) {
     return cb && cb(!options.message && 'Message is required');
   }
 
-  var title = escapeForCommandLine(options.title),
-      message = escapeForCommandLine(options.message),
-      subtitle = escapeForCommandLine(options.subtitle);
-
-  var commandline = [TERMINAL_NOTIFIER_APP,
-      (title ? '-title "' + title + '"' : ''),
-      '-message "' + message + '"',
-      (subtitle ? '-subtitle "' + subtitle + '"' : ''),
-      '-group "' + process.cwd() + '"',
-      (TERMINAL_PROGRAM ? ' -activate "' + TERMINAL_PROGRAM + '"' : '')].join(' ');
-
-  // grunt.spawn isn't being used because I couldn't get the app to recognize the arguments
-  return ChildProcess.exec(commandline, cb);
+  growl(options.message || '', {
+    title: options.title || '',
+    image: (options.status ? (__dirname + '/../img/' + status + '.png') : '')
+  });
 }
-
 
 function gruntTask(grunt) {
 
