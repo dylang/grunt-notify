@@ -8,7 +8,8 @@
 
 'use strict';
 
-var ChildProcess = require('child_process');
+var ChildProcess = require('child_process'),
+  grunt = require('grunt');
 
 // known terminal apps.
 var TERMINAL_APPS = {
@@ -23,8 +24,9 @@ var TERMINAL_NOTIFIER_APP = __dirname + '/../lib/terminal-notifier/terminal-noti
 // program to bring into focus when the user clicks the notification
 var TERMINAL_PROGRAM = TERMINAL_APPS[process.env.TERM_PROGRAM];
 
-// This only works on macs
+// This only works on macs and linux
 var isMac = process.platform === 'darwin';
+var isLinux = process.platform === 'linux';
 
 // Some characters are special in bash like $
 function escapeForCommandLine(str) {
@@ -37,23 +39,35 @@ function escapeForCommandLine(str) {
  * @param [cb] - optional callback. function(err, stdout, stderr)
  */
 function notify(options, cb) {
-  if (!isMac || !options.message) {
+  var title = escapeForCommandLine(options.title),
+    message = escapeForCommandLine(options.message),
+    subtitle = escapeForCommandLine(options.subtitle),
+    commandline;
+
+  if (!options.message) {
     return cb && cb(!options.message && 'Message is required');
   }
 
-  var title = escapeForCommandLine(options.title),
-      message = escapeForCommandLine(options.message),
-      subtitle = escapeForCommandLine(options.subtitle);
-
-  var commandline = [TERMINAL_NOTIFIER_APP,
+  if (isMac) {
+    commandline = [TERMINAL_NOTIFIER_APP,
       (title ? '-title "' + title + '"' : ''),
       '-message "' + message + '"',
       (subtitle ? '-subtitle "' + subtitle + '"' : ''),
       '-group "' + process.cwd() + '"',
       (TERMINAL_PROGRAM ? ' -activate "' + TERMINAL_PROGRAM + '"' : '')].join(' ');
 
-  // grunt.spawn isn't being used because I couldn't get the app to recognize the arguments
-  return ChildProcess.exec(commandline, cb);
+    // grunt.spawn isn't being used because I couldn't get the app to recognize the arguments
+    return ChildProcess.exec(commandline, cb);
+
+  } else if (isLinux) {
+    return grunt.util.spawn({
+      cmd: 'notify-send',
+      args: [
+        title,
+        message
+      ]
+    }, cb);
+  }
 }
 
 
