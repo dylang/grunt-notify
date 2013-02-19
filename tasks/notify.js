@@ -80,18 +80,24 @@ function notify(options, cb) {
 function notifyException(title, e) {
   var stackDump = StackParser.parse(e.stack);
   var stack = stackDump[0];
+  var message, subtitle;
 
   // Find the first stack that isn't a node module or an internal Node function
   while (stack && (stack.file.match('/node_modules') || !stack.file.match('/'))) {
     stack = stackDump.shift();
   }
-  if (!stack) {
-    stack = stackDump[0];
+
+  if (stack) {
+    subtitle = e.message;
+    message = stack.file.replace(process.cwd(), '') + ' line ' + stack.line
+  } else {
+    message = e.message;
   }
+
   notify({
     title:    title,
-    subtitle: e.message,
-    message:  stack.file.replace(process.cwd(), '') + ' line ' + stack.line
+    subtitle: subtitle,
+    message:  message
   });
 
 }
