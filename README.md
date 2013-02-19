@@ -1,52 +1,41 @@
 # grunt-notify
 
-> Automatic OSX Native Notifications when Grunt tasks fail.
+> Automatic native notifications in OSX and Linux when tasks fail.
 
-This requires `Grunt 0.4`. It also requires `OSX 10.8.2` (Mountain Lion) but it won't cause errors in older OSX versions or other platforms. 
 
 ## Getting Started
+This plugin requires Grunt `0.4`
+
+It also requires `OS X 10.8.2` (Mountain Lion) or Linux using `notify-send` but it won't cause errors in older OS X versions or other platforms.
+
+## Installing
 
 ```bash
 npm install grunt-notify --save-dev
 ```
 
-Once that's done, add this line to your project's Gruntfile:
+Once that's done, add this line to your project's `Gruntfile.js`:
 
 ```js
+// Automatic notifications when tasks fail.
 grunt.loadNpmTasks('grunt-notify');
 ```
 
-## Automatic behavior
-By including `grunt.loadNpmTasks('grunt-notify');` in your `Gruntfile.js` you will automatically get notifications when Grunt has warnings or errors!
-
-```js
-grunt.initConfig({
-  // no special task config is necessary!
-});
-
-// This is all you need
-grunt.loadNpmTasks('grunt-notify');
-```
+**That's all you need for automatic notifications.**
 
 [![Notify with Nodeunit](https://github.com/dylang/grunt-notify/raw/master/screenshots/nodeunit.png)](https://github.com/dylang/grunt-notify)
 
-## Configuring the automatic behavior
-If you want to make changes, such as change the title of the Notification or disable it, you can do so by configuring a `notify_hooks` task. *This is 100% optional*.
-To make Grunt always run your config changes add `grunt.task.run('notify_hooks');` to your `Gruntfile`.
+## Notify_Hooks Options
+
+If you want change the automatic messaging configure a task called `notify_hooks`.
 
 ```js
 grunt.initConfig({
   notify_hooks: {
     options: {
-        //These are the defaults. Including them in this config is optional.
-        warnHookEnabled:        true,
-        errorHookEnabled:       true,
-
-        warnHookDefaultTitle:   'Grunt Warning',
-        warnHookDefaultMessage: 'Warning!', // used if the warning from Grunt is not available
-
-        errorHookDefaultTitle:   'Grunt Error',
-        errorHookDefaultMessage: 'Error!' // used if the error from Grunt is not available
+      //These are the defaults. Including them in this config is optional.
+      enabled:        true,
+      title:          process.cwd() // defaults to your project's directory name, you can change to the name of your project
     }
   }
 });
@@ -54,16 +43,16 @@ grunt.initConfig({
 // Load the task
 grunt.loadNpmTasks('grunt-notify');
 
-// Always run it anytime you use `grunt` it uses your `notify_hooks` options.
+// This will load your configuration changes.
 grunt.task.run('notify_hooks');
 ```
 
 [![JSHint Example](https://github.com/dylang/grunt-notify/raw/master/screenshots/jshint.png)](https://github.com/dylang/grunt-notify)
 
-## Show Notification Messages when you want to
+## Showing Specfic Notifications
 
-### The notify MutiTask
-Show a message whenever you want!
+Sometimes you want to show messages like "Uglify complete" or "Project Deployed" - that's easy to do too.
+
 
 ```js
 grunt.initConfig({
@@ -77,7 +66,6 @@ grunt.initConfig({
       options: {
         title: 'Task Complete',  // optional
         message: 'SASS and Uglify finished running', //required
-        subtitle: '' // optional, kinda a lot for a message
       }
     },
     server: {
@@ -106,15 +94,20 @@ grunt.registerTask('server', ['uglify', 'sass', 'server', 'notify:server']);
 Run `grunt` to lint and run the tests.
 
 ## Terminal Notifier
-To use the native notification system OSX requires packages to be signed and compiled using their platform and tools. This is not very friendly for Node users so we are using the tiny signed native application [Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy Durán](https://github.com/alloy). We're stuck with the default icon for now, if anybody knows how it would be nice if we could use the Grunt logo or something custom instead.
+To use the native notification system OSX requires packages to be signed and compiled using their platform and tools.
+This is not very friendly for Node users so we are using the tiny signed native application
+[Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy Durán](https://github.com/alloy).
+We're stuck with the default icon for now, if anybody knows how it would be nice if we could use the Grunt logo or something custom instead.
 
 ## Growl, Windows, etc
 Wish there was fallback support for Growl and other systems? Post a pull request with updated docs and tests and I'll be happy to update it.
 
 ## Doodle or Die
-This project was created for and is used by [Doodle or Die](http://doodleOrDie.com). 
+This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com).
 
 [![Doodle or Die example](https://github.com/dylang/grunt-notify/raw/master/screenshots/deploy.png)](http://doodleOrDie.com)
 
 ## Release History
-Dec 28 - First version
+Feb 19 - Added Linux support thanks to @johnmccalla, listen for fatal errors, simplified options.
+Dec 28 - First version.
+
