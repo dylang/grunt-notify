@@ -108,6 +108,13 @@ This project was created for and is used by the free game I co-created for Node 
 [![Doodle or Die example](https://github.com/dylang/grunt-notify/raw/master/screenshots/deploy.png)](http://doodleOrDie.com)
 
 ## Release History
-Feb 19 - Added Linux support thanks to @johnmccalla, listen for fatal errors, simplified options.
-Dec 28 - First version.
+* 19 Feb 2013 - 0.1.4
+** Added Linux support thanks to @johnmccalla
+** listen for fatal errors
+** simplified options
+** default title is project title
+** show file name and line number if available
+
+* 28 Dec 2013 - 0.1.0-0.1.3
+** First version
 
