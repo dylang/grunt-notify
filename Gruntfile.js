@@ -30,10 +30,6 @@ module.exports = function(grunt) {
 
     // Configuration to be run (and then tested).
     notify: {
-      default_options: {
-        options: {
-        }
-      },
       custom_options: {
         options: {
           title: 'Notify Title',
@@ -49,7 +45,7 @@ module.exports = function(grunt) {
         options: {
           title: 'Task Complete',  // optional
           message: 'SASS and Uglify finished running', //required
-          subtitle: '' // optional, kinda a lot for a message
+          subtitle: 'subtitle' // optional, kinda a lot for a message
         }
       }
     },

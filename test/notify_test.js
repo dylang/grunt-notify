@@ -1,7 +1,7 @@
 'use strict';
 
 var grunt = require('grunt');
-var notify = require('../tasks/notify');
+var notify = require('../tasks/lib/notify').init(grunt);
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -32,7 +32,7 @@ exports.notify = {
   notify: function(test) {
     test.expect(1);
 
-    notify.notify({ title: 'title', message: 'message' }, function(err){
+    notify.trigger({ title: 'title', message: 'message' }, function(err){
       test.equal(err, null, 'should not have any errors.');
       test.done();
     });
@@ -42,7 +42,7 @@ exports.notify = {
   noMessage: function(test) {
     test.expect(1);
 
-    notify.notify({ title: 'title' }, function(err){
+    notify.trigger({ title: 'title' }, function(err){
       test.equal(err, 'Message is required', 'should error when no message.');
       test.done();
     });

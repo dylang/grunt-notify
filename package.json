@@ -48,6 +48,7 @@
     "notify-send"
   ],
   "dependencies": {
-    "stack-parser": "0.0.1"
+    "stack-parser": "0.0.1",
+    "growl": "~1.7.0"
   }
 }
