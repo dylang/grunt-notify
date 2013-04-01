@@ -1,12 +1,15 @@
 # grunt-notify
 
-> Automatic native notifications in OSX and Linux when tasks fail.
+> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.
+
+[![JSHint Example](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)
+[![JSHint Example](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)
+[![JSHint Example](screenshots/notification-center-sidebar-jshint.png)](https://github.com/dylang/grunt-notify)
 
 
 ## Getting Started
-This plugin requires Grunt `0.4`
 
-It also requires `OS X 10.8.2` (Mountain Lion) or Linux using `notify-send` but it won't cause errors in older OS X versions or other platforms.
+This plugin recommends Grunt `0.4.1` or newer.
 
 ## Installing
 
@@ -23,7 +26,7 @@ grunt.loadNpmTasks('grunt-notify');
 
 **That's all you need for automatic notifications.**
 
-[![Notify with Nodeunit](https://github.com/dylang/grunt-notify/raw/master/screenshots/nodeunit.png)](https://github.com/dylang/grunt-notify)
+[![Notify with Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)
 
 ## Notify_Hooks Options
 
@@ -31,11 +34,11 @@ If you want change the automatic messaging configure a task called `notify_hooks
 
 ```js
 grunt.initConfig({
+ // This is completely optional.
   notify_hooks: {
     options: {
-      //These are the defaults. Including them in this config is optional.
-      enabled:        true,
-      title:          process.cwd() // defaults to your project's directory name, you can change to the name of your project
+      enabled: true,
+      title: "Project Name" // defaults to your project's directory name, you can change to the name of your project
     }
   }
 });
@@ -43,11 +46,10 @@ grunt.initConfig({
 // Load the task
 grunt.loadNpmTasks('grunt-notify');
 
-// This will load your configuration changes.
+// This is required if you use any options.
 grunt.task.run('notify_hooks');
 ```
 
-[![JSHint Example](https://github.com/dylang/grunt-notify/raw/master/screenshots/jshint.png)](https://github.com/dylang/grunt-notify)
 
 ## Showing Specfic Notifications
 
@@ -82,13 +84,13 @@ grunt.loadNpmTasks('grunt-notify');
 grunt.registerTask('server', ['uglify', 'sass', 'server', 'notify:server']);
 ```
 
-[![Watch example](https://github.com/dylang/grunt-notify/raw/master/screenshots/watch.png)](https://github.com/dylang/grunt-notify)
+[![Watch example](screenshots/growl-deploy.png)](https://github.com/dylang/grunt-notify)
+[![Watch example](screenshots/notification-center-deploy.png)](https://github.com/dylang/grunt-notify)
 
 
 ### Options
 * `title` (_optional_): Notification title
 * `message` (_required_): Notification message
-* `subtitle` (_optional_): Subtitle, I think it's a bit much.
 
 ## Tests
 Run `grunt` to lint and run the tests.
@@ -99,22 +101,28 @@ This is not very friendly for Node users so we are using the tiny signed native 
 [Terminal Notifer](https://github.com/alloy/terminal-notifier) from [Eloy Durán](https://github.com/alloy).
 We're stuck with the default icon for now, if anybody knows how it would be nice if we could use the Grunt logo or something custom instead.
 
-## Growl, Windows, etc
-Wish there was fallback support for Growl and other systems? Post a pull request with updated docs and tests and I'll be happy to update it.
-
 ## Doodle or Die
-This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com).
+This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!
 
-[![Doodle or Die example](https://github.com/dylang/grunt-notify/raw/master/screenshots/deploy.png)](http://doodleOrDie.com)
 
 ## Release History
-* 19 Feb 2013 - 0.1.4
-** Added Linux support thanks to @johnmccalla
-** listen for fatal errors
-** simplified options
-** default title is project title
-** show file name and line number if available
 
+* 31 Mar 2013 - 0.2.0
+ * Complete rewrite.
+ * New support for Grunt in Windows.
+ * Now parses JSLint errors to show them in notification.
+ * Notification title will automatically use package.json name field or directory name.
+ * No more subtitle option.
+ * Title now includes the task that was running.
+ * Better command line escaping including support for newline (\n).
+* 17 Mar 2013 - 0.1.6
+ * Code refactor to clean things up
+* 19 Feb 2013 - 0.1.4
+ * Added Linux support thanks to @johnmccalla
+ * listen for fatal errors
+ * simplified options
+ * default title is project title
+ * show file name and line number if available
 * 28 Dec 2013 - 0.1.0-0.1.3
-** First version
+ * First version
 

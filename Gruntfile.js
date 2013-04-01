@@ -15,11 +15,15 @@ module.exports = function(grunt) {
     jshint: {
       all: [
         'Gruntfile.js',
-        'tasks/*.js',
+        'tasks/**/*.js',
         '<%= nodeunit.tests %>'
       ],
+      fixtures: [
+        'test/fixtures/*.js'
+      ],
       options: {
-        jshintrc: '.jshintrc'
+        jshintrc: '.jshintrc',
+        force: true
       }
     },
 
@@ -43,9 +47,8 @@ module.exports = function(grunt) {
       },
       example: {
         options: {
-          title: 'Task Complete',  // optional
-          message: 'SASS and Uglify finished running', //required
-          subtitle: 'subtitle' // optional, kinda a lot for a message
+          title: 'Doodle or Die',  // optional
+          message: 'Deploy to production success!' //required
         }
       }
     },
