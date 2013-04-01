@@ -109,6 +109,8 @@ This project was created for and is used by the free game I co-created for Node 
 
 ## Release History
 
+* 1 Apr 2013 - 0.2.2
+ * Fix bug in Notify-Send thanks to @jcoffin.
 * 1 Apr 2013 - 0.2.1
  * Fix dependencies.
 * 31 Mar 2013 - 0.2.0
@@ -122,10 +124,10 @@ This project was created for and is used by the free game I co-created for Node 
 * 17 Mar 2013 - 0.1.6
  * Code refactor to clean things up
 * 19 Feb 2013 - 0.1.4
- * Added Linux support thanks to @johnmccalla
- * listen for fatal errors
- * simplified options
- * default title is project title
- * show file name and line number if available
+ * Added Linux support thanks to @johnmccalla.
+ * Listen for fatal errors.
+ * Simplified options.
+ * Default title is project title.
+ * Show file name and line number if available.
 * 28 Dec 2013 - 0.1.0-0.1.3
  * First version
