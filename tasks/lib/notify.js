@@ -9,7 +9,7 @@
 'use strict';
 
 // try them all, one might work!
-var notify = //require('./platforms/growl-notify') ||
+var notify = require('./platforms/growl-notify') ||
   require('./platforms/notification-center') ||
   require('./platforms/notify-send');
 

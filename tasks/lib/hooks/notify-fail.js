@@ -54,8 +54,7 @@ module.exports = function(grunt, options) {
 
     if (/Task .* failed\./.test(e.message)) {
       message = e.message;
-    }
-    else if (e.message && e.stack) {
+    } else if (e.message && e.stack) {
       message = exception(e);
     } else {
       message = e;
