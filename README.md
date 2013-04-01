@@ -2,8 +2,8 @@
 
 > Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.
 
-[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)
 [![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)
+[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)
 [![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)
 
 ## Getting Started
@@ -109,6 +109,8 @@ This project was created for and is used by the free game I co-created for Node 
 
 ## Release History
 
+* 1 Apr 2013 - 0.2.1
+ * Fix dependencies.
 * 31 Mar 2013 - 0.2.0
  * Complete rewrite.
  * New support for Grunt in Windows.
