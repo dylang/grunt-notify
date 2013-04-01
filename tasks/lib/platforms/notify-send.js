@@ -23,7 +23,7 @@ module.exports = isSupported() && function(options, cb) {
     APP,
     escapeForCommandLine(options.title),
     escapeForCommandLine(options.message)
-  ];
+  ].join(' ');
 
   return ChildProcess.exec(cmd, cb);
 };
