@@ -108,9 +108,10 @@ I've changed the default icon which is owned by Apple to the Grunt logo.
 This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!
 
 ## Release History
-
+* 4 Apr 2013 - 0.2.3
+ * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).
 * 1 Apr 2013 - 0.2.2
- * Fix bug in Notify-Send thanks to @jcoffin.
+ * Fix bug in Notify-Send thanks to [@jcoffin](https://github.com/jcoffin).
 * 1 Apr 2013 - 0.2.1
  * Fix dependencies.
 * 31 Mar 2013 - 0.2.0
@@ -120,11 +121,11 @@ This project was created for and is used by the free game I co-created for Node 
  * Notification title will automatically use package.json name field or directory name.
  * No more subtitle option.
  * Title now includes the task that was running.
- * Better command line escaping including support for newline (\n).
+ * Better command line escaping including support for newline `\n`.
 * 17 Mar 2013 - 0.1.6
  * Code refactor to clean things up
 * 19 Feb 2013 - 0.1.4
- * Added Linux support thanks to @johnmccalla.
+ * Added Linux support thanks to [@johnmccalla](https://github.com/johnmccalla).
  * Listen for fatal errors.
  * Simplified options.
  * Default title is project title.

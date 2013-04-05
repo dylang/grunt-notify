@@ -25,7 +25,7 @@ module.exports = function(grunt, options) {
       }
     }
 
-    if (stack) {
+    if (stack && stack.file) {
       message = [
         stack.file.replace(process.cwd(), ''),
         'Line ' + stack.line,

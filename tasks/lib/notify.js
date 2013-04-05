@@ -14,7 +14,10 @@ var notify = require('./platforms/growl-notify') ||
   require('./platforms/notify-send');
 
 function removeColor(str) {
-  return (str || '').replace(/\x1B\[\d+m/g, '');
+  if (typeof str === 'string') {
+    return str.replace(/\x1B\[\d+m/g, '');
+  }
+  return str;
 }
 
 /**
@@ -27,12 +30,12 @@ module.exports = function(options, cb) {
     return false;
   }
 
+  options.title = removeColor(options.title);
+  options.message = removeColor(options.message);
+
   if (!options.message) {
     return cb && cb(!options.message && 'Message is required');
   }
-
-  options.title = removeColor(options.title);
-  options.message = removeColor(options.message);
 
   return notify(options, cb);
 };
