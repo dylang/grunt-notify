@@ -13,13 +13,16 @@ module.exports = function(grunt, options) {
   var notify = require('../notify');
 
   function exception(e) {
-    var stackDump = StackParser.parse(e.stack);
-    var stack = stackDump[0];
-    var message;
+    var stackDump, stack, message;
 
-    // Find the first stack that isn't a node module or an internal Node function
-    while (stack && (stack.file.match('/node_modules') || !stack.file.match('/'))) {
-      stack = stackDump.shift();
+    if (typeof e.stack !== 'string'){
+      stackDump = StackParser.parse(e.stack);
+      stack = stackDump[0];
+
+      // Find the first stack that isn't a node module or an internal Node function
+      while (stack && (stack.file.match('/node_modules') || !stack.file.match('/'))) {
+        stack = stackDump.shift();
+      }
     }
 
     if (stack) {
