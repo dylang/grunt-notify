@@ -8,7 +8,7 @@
 'use strict';
 
 var child_process = require('child_process');
-var path = require('path');
+var path = require('flavored-path');
 var os = require('os');
 var findApp = require('../util/findApp');
 var escapeForCommandLine = require('../util/escapeForCommandLine');

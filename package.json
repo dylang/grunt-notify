@@ -52,6 +52,7 @@
     "stack-parser": "~0.0.1",
     "which": "~1.0.5",
     "semver": "~1.1.4",
-    "growl": "~1.7.0"
+    "growl": "~1.7.0",
+    "flavored-path": "0.0.8"
   }
 }
