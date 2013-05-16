@@ -1,6 +1,5 @@
 'use strict';
 
-var grunt = require('grunt');
 var escapeForCommandLine = require('../tasks/lib/util/escapeForCommandLine');
 
 /*
