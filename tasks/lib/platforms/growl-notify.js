@@ -8,7 +8,7 @@
 'use strict';
 
 var child_process = require('child_process');
-var path = require('flavored-path');
+var path = require('path');
 var os = require('os');
 var findApp = require('../util/findApp');
 var escapeForCommandLine = require('../util/escapeForCommandLine');
@@ -81,6 +81,8 @@ module.exports = isSupported() && function (options, cb) {
     createMessageArg(options.message),
     createTitleArg(options.title)
   ].join(' ');
+
+  console.log(cmd);
 
   // execute
   return child_process.exec(cmd, cb);
