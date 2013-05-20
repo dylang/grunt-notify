@@ -82,8 +82,6 @@ module.exports = isSupported() && function (options, cb) {
     createTitleArg(options.title)
   ].join(' ');
 
-  console.log(cmd);
-
   // execute
   return child_process.exec(cmd, cb);
 };

@@ -10,7 +10,7 @@
 module.exports = function escapeForCommandLine(string) {
   return JSON
     .stringify(string)
-    .replace(/[^\\][\\][n]/g, function(match) {
+    .replace(/[^\\]\\n/g, function(match) {
         return match.substring(0,1) + match.substring(1,3);
     }); // put new lines back in
 };
