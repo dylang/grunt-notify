@@ -11,7 +11,11 @@
 // try them all, one might work!
 var notify = require('./platforms/growl-notify') ||
   require('./platforms/notification-center') ||
-  require('./platforms/notify-send');
+  require('./platforms/notify-send') ||
+  function(options, cb) {
+    // no notification system
+    cb && cb();
+  };
 
 function removeColor(str) {
   if (typeof str === 'string') {
@@ -26,9 +30,6 @@ function removeColor(str) {
  * @param [cb] - optional callback. function(err, stdout, stderr)
  */
 module.exports = function(options, cb) {
-  if (!notify) {
-    return false;
-  }
 
   options.title = removeColor(options.title);
   options.message = removeColor(options.message);

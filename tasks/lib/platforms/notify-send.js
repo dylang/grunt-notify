@@ -7,23 +7,21 @@
  */
 'use strict';
 
-var ChildProcess = require('child_process');
+var spawn = require('../util/spawn');
 var findApp = require('../util/findApp');
-var escapeForCommandLine = require('../util/escapeForCommandLine');
 
-var APP = 'notify-send';
+var cmd = 'notify-send';
 
 function isSupported() {
-  return findApp(APP);
+  return findApp(cmd);
 }
 
 module.exports = isSupported() && function(options, cb) {
 
-  var cmd = [
-    APP,
-    escapeForCommandLine(options.title),
-    escapeForCommandLine(options.message)
-  ].join(' ');
+  var args = [
+    options.title,
+    options.message
+  ];
 
-  return ChildProcess.exec(cmd, cb);
+  spawn(cmd, args, cb);
 };

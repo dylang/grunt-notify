@@ -23,13 +23,23 @@ module.exports = function(grunt) {
       ],
       options: {
         jshintrc: '.jshintrc',
-        force: true
+        force: false
       }
     },
 
     // Before generating any new files, remove any previously-created files.
     clean: {
       tests: ['tmp']
+    },
+
+    watch: {
+      test: {
+          files: ['**/*.js'],
+          tasks: ['nodeunit', 'notify'],
+          options: {
+            nospawn: true
+          }
+        }
     },
 
     // Configuration to be run (and then tested).
@@ -50,6 +60,18 @@ module.exports = function(grunt) {
           title: 'Doodle or Die',  // optional
           message: 'Deploy to production success!' //required
         }
+      },
+      directory: {
+        options: {
+          title: 'Directory',
+          message: 'Look in c:\\temp\\new\\ or /var/tmp/new.'
+        }
+      },
+      newlines: {
+        options: {
+          title: 'Directory',
+          message: 'Line 1\nLine 2\nLine3\nLine 4\nLine 5.'
+        }
       }
     },
 
@@ -67,6 +89,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.

@@ -42,13 +42,11 @@ exports.notify = {
   wierdChars: function(test) {
     test.expect(1);
 
-    notify({ title: 'wierd chars', message: 'bang! "quotes" [brackets] &and&' }, function(err){
+    notify({ title: 'weird chars', message: 'bang! "quotes" [brackets] &and&' }, function(err){
       test.equal(err, null, 'should not have any errors.');
       test.done();
     });
-
   },
-
 
   noMessage: function(test) {
     test.expect(1);

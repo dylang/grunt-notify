@@ -39,7 +39,8 @@ grunt.initConfig({
   notify_hooks: {
     options: {
       enabled: true,
-      title: "Project Name" // defaults to your project's directory name, you can change to the name of your project
+      max_jshint_notifications: 5, // maximum number of notifications from jshint output
+      title: "Project Name" // defaults to the name in package.json, or uses project's directory name, you can change to the name of your project
     }
   }
 });
@@ -108,6 +109,10 @@ I've changed the default icon which is owned by Apple to the Grunt logo.
 This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!
 
 ## Release History
+* 30 May 2013 - 2.3.4
+ * Make notications more reliable. They should show up now even if Grunt exists from an error.
+ * Fix problems with `\n` in a windows path becoming a new line, like `c:\new`.
+ * Don't show too many jshint errors. By default only 5 jshint notifications, and that number is configurable.
 * 4 Apr 2013 - 0.2.3
  * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).
 * 1 Apr 2013 - 0.2.2

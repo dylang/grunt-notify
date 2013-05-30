@@ -55,6 +55,10 @@ module.exports = function(grunt, options) {
       return;
     }
 
+    if (e && e.length === 1) {
+      e = e[0];
+    }
+
     if (/Task .* failed\./.test(e.message)) {
       message = e.message;
     } else if (e.message && e.stack) {
@@ -62,6 +66,8 @@ module.exports = function(grunt, options) {
     } else {
       message = e;
     }
+
+    //grunt.log.ok('!!!!!!', message);
 
     return notify({
       title:    options.title + (grunt.task.current.nameArgs ? ' ' + grunt.task.current.nameArgs : ''),
@@ -74,6 +80,7 @@ module.exports = function(grunt, options) {
   grunt.util.hooker.hook(grunt.fail, 'warn', notifyHook);
   // run on error
   grunt.util.hooker.hook(grunt.fail, 'error', notifyHook);
+  grunt.util.hooker.hook(grunt.log, 'fail', notifyHook);
   // run on fatal
   grunt.util.hooker.hook(grunt.fail, 'fatal', notifyHook);
 

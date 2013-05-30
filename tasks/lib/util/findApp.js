@@ -15,6 +15,9 @@ module.exports = function(filename) {
   // which throws errors in sync mode
   try {
     path = which(filename);
+    if (!path.match(filename)){
+      return false;
+    }
   } catch (e) {
     path = false;
   }

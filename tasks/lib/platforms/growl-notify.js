@@ -7,14 +7,12 @@
  */
 'use strict';
 
-var child_process = require('child_process');
 var path = require('path');
 var os = require('os');
 var findApp = require('../util/findApp');
-var escapeForCommandLine = require('../util/escapeForCommandLine');
-var cmd;
+var spawn = require('../util/spawn');
 
-var APP = 'growlnotify';
+var cmd = 'growlnotify';
 var IS_MAC = os.type() === 'Darwin';
 var IS_WINDOWS = os.type() === 'Windows_NT';
 var DEFAULT_IMAGE = path.resolve(__dirname + '../../../../images/grunt-logo.png');
@@ -28,61 +26,70 @@ function windowsOnly(string) {
 }
 
 function isSupported() {
-  return findApp(APP);
+  return findApp(cmd);
 }
 
 function createImageArg(image) {
 
+  var imageType = '';
+  var extension;
+
   image = image || DEFAULT_IMAGE;
 
   if (IS_MAC) {
-    var kind = '';
-    var ext = path.extname(image).substr(1);
+    extension = path.extname(image).substr(1);
 
-    if (ext === 'icns') {
-      kind = 'iconpath';
+    if (extension === 'icns') {
+      imageType = 'iconpath';
     } else if (/^[A-Z]/.test(image)) {
-      kind = 'appIcon';
-    } else if (/^png|gif|jpe?g$/.test(ext)) {
-      kind = 'image';
-    } else if (ext) {
-      kind = 'icon';
-      image = ext;
+      imageType = 'appIcon';
+    } else if (/^png|gif|jpe?g$/.test(extension)) {
+      imageType = 'image';
+    } else if (extension) {
+      imageType = 'icon';
+      image = extension;
     } else {
-      kind = 'icon';
+      imageType = 'icon';
     }
 
-    return '--' + kind + ' ' + image;
+    return [
+      '--' + imageType,
+      image
+    ];
   }
 
   if (IS_WINDOWS) {
-    return '/i:' + escapeForCommandLine(image);
+    return [
+      '/i:' + image
+    ];
   }
 
-  return '';
+  return [];
 }
 
 function createTitleArg(title) {
   if (title) {
-    return windowsOnly('/t:') + escapeForCommandLine(title);
+    return [
+      windowsOnly('/t:') + title
+    ];
   }
-  return '';
+  return [];
 }
 
 function createMessageArg(message) {
-  return macOnly('-m ') + escapeForCommandLine(message);
+  return [
+    macOnly('-m'),
+    message
+  ];
 }
 
+
 module.exports = isSupported() && function (options, cb) {
+  var args = []
+      .concat(createImageArg(options.image))
+      .concat(createMessageArg(options.message))
+      .concat(createTitleArg(options.title));
 
-  var cmd = [
-    APP,
-    createImageArg(options.image),
-    createMessageArg(options.message),
-    createTitleArg(options.title)
-  ].join(' ');
-
-  // execute
-  return child_process.exec(cmd, cb);
+  spawn(cmd, args, cb);
 };
 

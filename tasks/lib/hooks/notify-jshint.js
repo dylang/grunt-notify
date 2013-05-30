@@ -14,8 +14,27 @@ module.exports = function(grunt, options) {
   var filename;
   var reason;
   var lineNumber;
+  var count = 0;
+  var enabled;
+
+  function enable() {
+    if (!enabled) {
+      grunt.util.hooker.hook(grunt.log, 'writeln', grabErrors);
+      grunt.util.hooker.hook(grunt.verbose, 'write', grabFilename);
+      enabled = true;
+    }
+  }
+
+  function disable() {
+    if (enabled) {
+      grunt.util.hooker.unhook(grunt.log, 'writeln');
+      grunt.util.hooker.unhook(grunt.verbose, 'write');
+      enabled = false;
+    }
+  }
 
   function grabFilename(message) {
+
     var parseMessage = grunt.log.uncolor(message).match(/^Linting\s(.*)\.\.\.$/);
     if (parseMessage && parseMessage.length === 2) {
       filename = parseMessage[1];
@@ -31,11 +50,21 @@ module.exports = function(grunt, options) {
       return;
     }
 
-    var parseMessage = grunt.log.uncolor(message).match(/^\[L([0-9]*).*:\s(.*)$/);
+    var parseMessage = grunt.log.uncolor(message).match(/^\[L([0-9]*).*[0-9]:\s(.*)$/);
 
     if (parseMessage && parseMessage.length === 3) {
+
+      count++;
+      //grunt.log.ok('graberrors ' + count + parseMessage);
+
+      if (count > options.max_jshint_notifications) {
+        disable();
+        return;
+      }
+
       lineNumber = parseMessage[1];
       reason = parseMessage[2];
+
       return;
     }
 
@@ -53,9 +82,16 @@ module.exports = function(grunt, options) {
     }
   }
 
+  function checkForJSHint(message) {
+    if (message.match(/jshint/)) {
+      enable();
+    } else {
+      disable();
+    }
+  }
+
   // try to catch jshint errors
-  grunt.util.hooker.hook(grunt.log, 'writeln', grabErrors);
-  grunt.util.hooker.hook(grunt.verbose, 'write', grabFilename);
+  grunt.util.hooker.hook(grunt.log, 'header', checkForJSHint);
 
   function setOptions(opts) {
     options = opts;

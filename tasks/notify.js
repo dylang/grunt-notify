@@ -21,15 +21,7 @@ module.exports = function gruntTask(grunt) {
     var options = this.options(defaults);
 
     if (options.message) {
-      var done = this.async();
-      notify(options, function(err, stdout, stderr) {
-        grunt.log.debug('notify result:', {
-          err:    err,
-          stdout: stdout,
-          stderr: stderr
-        });
-        done(err);
-      });
+      notify(options);
     }
     grunt.log.debug('Notify options:', options);
   });
