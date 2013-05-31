@@ -109,7 +109,7 @@ I've changed the default icon which is owned by Apple to the Grunt logo.
 This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!
 
 ## Release History
-* 30 May 2013 - 2.3.4
+* 30 May 2013 - 0.2.4
  * Make notications more reliable. They should show up now even if Grunt exists from an error.
  * Fix problems with `\n` in a windows path becoming a new line, like `c:\new`.
  * Don't show too many jshint errors. By default only 5 jshint notifications, and that number is configurable.
