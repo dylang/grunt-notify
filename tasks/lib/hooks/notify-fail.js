@@ -70,6 +70,7 @@ module.exports = function(grunt, options) {
     //grunt.log.ok('!!!!!!', message);
 
     return notify({
+      type:     options.type,
       title:    options.title + (grunt.task.current.nameArgs ? ' ' + grunt.task.current.nameArgs : ''),
       message:  message
     });
@@ -78,9 +79,11 @@ module.exports = function(grunt, options) {
   // run on warning
   grunt.util.hooker.hook(grunt, 'warn', notifyHook);
   grunt.util.hooker.hook(grunt.fail, 'warn', notifyHook);
+
   // run on error
   grunt.util.hooker.hook(grunt.fail, 'error', notifyHook);
   grunt.util.hooker.hook(grunt.log, 'fail', notifyHook);
+
   // run on fatal
   grunt.util.hooker.hook(grunt.fail, 'fatal', notifyHook);
 

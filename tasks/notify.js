@@ -8,10 +8,12 @@
 'use strict';
 module.exports = function gruntTask(grunt) {
 
+  var types = require('./notify_types');
   var notify = require('./lib/notify');
   var guessProjectName = require('./lib/util/guessProjectName');
 
   var defaults = {
+    type:     types.SUCCESS,
     title:    guessProjectName(),
     message:  '' //required
   };

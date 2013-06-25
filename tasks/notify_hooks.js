@@ -9,13 +9,15 @@
 
 module.exports = function gruntTask(grunt) {
 
+  var types = require('./notify_types');
   var guessProjectName = require('./lib/util/guessProjectName');
 
   // All of these settings are customizable via notify_hooks
   var defaults = {
     enabled: true,
     max_jshint_notifications: 5,
-    title: guessProjectName()
+    title: guessProjectName(),
+    type: types.FAILURE
   };
 
   var notifyFail = require('./lib/hooks/notify-fail')(grunt, defaults);
@@ -23,6 +25,7 @@ module.exports = function gruntTask(grunt) {
 
   grunt.registerTask('notify_hooks', 'Config the automatic notification hooks.', function(){
     var options = this.options(defaults);
+
     notifyFail.setOptions(options);
     notifyJSHint.setOptions(options);
   });
