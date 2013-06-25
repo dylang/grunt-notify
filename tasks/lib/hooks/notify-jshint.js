@@ -70,6 +70,7 @@ module.exports = function(grunt, options) {
 
     if (lineNumber && reason) {
       notify({
+          type:  options.type,
           title: options.title + (grunt.task.current.nameArgs ? ' ' + grunt.task.current.nameArgs : ''),
           message: [
             filename,
