@@ -135,5 +135,5 @@ This project was created for and is used by the free game I co-created for Node 
  * Simplified options.
  * Default title is project title.
  * Show file name and line number if available.
-* 28 Dec 2013 - 0.1.0-0.1.3
+* 28 Dec 2012 - 0.1.0-0.1.3
  * First version
