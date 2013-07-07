@@ -1,6 +1,6 @@
 # grunt-notify
 
-> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.
+> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Snarl, Mountain Lion Notification Center, and Notify-Send.
 
 [![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)
 [![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)
@@ -22,6 +22,8 @@ Once that's done, add this line to your project's `Gruntfile.js`:
 // Automatic notifications when tasks fail.
 grunt.loadNpmTasks('grunt-notify');
 ```
+
+Make sure the application directory of Growl/Snarl is on your system `path`. For Snarl this has to be the `tools` folder, where `heysnarl.exe` is located.
 
 **That's all you need for automatic notifications.**
 
