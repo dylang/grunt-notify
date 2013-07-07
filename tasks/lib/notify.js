@@ -12,6 +12,7 @@
 var notify = require('./platforms/growl-notify') ||
   require('./platforms/notification-center') ||
   require('./platforms/notify-send') ||
+  require('./platforms/snarl') ||
   function(options, cb) {
     // no notification system
     cb && cb();
