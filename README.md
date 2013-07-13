@@ -5,6 +5,7 @@
 [![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)
 [![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)
 [![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)
+[![Snarl: Nodeunit](screenshots/snarl-nodeunit.png)](https://github.com/dylang/grunt-notify)
 
 ## Getting Started
 
