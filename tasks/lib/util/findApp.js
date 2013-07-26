@@ -14,7 +14,7 @@ var fs = require('fs');
 module.exports = function(filename) {
 
   if (filename.indexOf(path.sep)) {
-    return fs.existsSync(filename);
+    return fs.existsSync(filename) && filename;
   }
 
   // `which` throws errors in sync mode

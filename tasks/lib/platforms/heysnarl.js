@@ -13,7 +13,7 @@ var url = require('url');
 var spawn = require('../util/spawn');
 var findApp = require('../util/findApp');
 
-var cmd = 'heysnarl';
+var cmd = 'heysnarl.exe';
 var INSTALL_DIR = path.join('full phat', 'Snarl', 'tools');
 var FULL_PATH = path.join(process.env.ProgramFiles, INSTALL_DIR, cmd);
 var FULL_PATH_x86 = path.join(process.env['ProgramFiles(x86)'], INSTALL_DIR, cmd);
@@ -46,5 +46,8 @@ module.exports = isSupported() && function(options, cb) {
     }
   });
 
-  spawn(cmd, [params], cb);
+  spawn(cmd, [params], function(err){
+    // heysnarl seems to sends err even when it doesn't need to
+    cb();
+  });
 };
