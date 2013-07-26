@@ -8,11 +8,16 @@
 'use strict';
 
 var which = require('which').sync;
+var path = require('path');
+var fs = require('fs');
 
 module.exports = function(filename) {
-  var path;
 
-  // which throws errors in sync mode
+  if (filename.indexOf(path.sep)) {
+    return fs.existsSync(filename) && filename;
+  }
+
+  // `which` throws errors in sync mode
   try {
     path = which(filename);
     if (!path.match(filename)){

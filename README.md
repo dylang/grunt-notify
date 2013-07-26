@@ -1,10 +1,20 @@
 # grunt-notify
 
-> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.
+> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, Snarl, or Notify-Send.
 
+
+#### Growl for Mac and Windows
 [![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)
-[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)
 [![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)
+
+#### OS X Notifcation Center
+[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)
+
+#### Snarl for Windows
+[![Snarl: Nodeunit](screenshots/snarl-nodeunit.png)](https://github.com/dylang/grunt-notify)
+
+#### Notify-Send for Linux
+Screenshot on loan. Can someone donate a new one?
 
 ## Getting Started
 
@@ -109,6 +119,8 @@ I've changed the default icon which is owned by Apple to the Grunt logo.
 This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!
 
 ## Release History
+* 26 July 2013 - 0.2.5
+ * [Windows Snarl](http://snarl.fullphat.net/) support thanks to [@vohof](https://github.com/vohof) and [@FunkMonkey](https://github.com/FunkMonkey).
 * 30 May 2013 - 0.2.4
  * Make notications more reliable. They should show up now even if Grunt exists from an error.
  * Fix problems with `\n` in a windows path becoming a new line, like `c:\new`.
