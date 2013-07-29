@@ -13,7 +13,7 @@ var fs = require('fs');
 
 module.exports = function(filename) {
 
-  if (filename.indexOf(path.sep)) {
+  if (filename.indexOf(path.sep) > -1) {
     return fs.existsSync(filename) && filename;
   }
 

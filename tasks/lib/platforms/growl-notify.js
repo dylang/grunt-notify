@@ -83,7 +83,6 @@ function createMessageArg(message) {
   ];
 }
 
-
 module.exports = isSupported() && function (options, cb) {
   var args = []
       .concat(createImageArg(options.image))
