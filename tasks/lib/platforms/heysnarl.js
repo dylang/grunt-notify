@@ -26,9 +26,9 @@ function findInstall() {
   var full_path = path.join(process.env.ProgramFiles, INSTALL_DIR, cmd);
   var full_path_x86 = path.join(process.env['ProgramFiles(x86)'], INSTALL_DIR, cmd);
 
-  return cmd = findApp(cmd)
-    || findApp(full_path)
-    || findApp(full_path_x86);
+  return cmd = findApp(cmd) ||
+    findApp(full_path) ||
+    findApp(full_path_x86);
 }
 
 function isSupported() {

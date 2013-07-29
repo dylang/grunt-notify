@@ -119,6 +119,8 @@ I've changed the default icon which is owned by Apple to the Grunt logo.
 This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!
 
 ## Release History
+* 29 July 2013 - 0.2.7
+ * Fixed bug that could prevent Growl from working.
 * 26 July 2013 - 0.2.5
  * [Windows Snarl](http://snarl.fullphat.net/) support thanks to [@vohof](https://github.com/vohof) and [@FunkMonkey](https://github.com/FunkMonkey).
 * 30 May 2013 - 0.2.4

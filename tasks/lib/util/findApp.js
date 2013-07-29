@@ -13,19 +13,21 @@ var fs = require('fs');
 
 module.exports = function(filename) {
 
-  if (filename.indexOf(path.sep) > -1) {
-    return fs.existsSync(filename) && filename;
+  if (fs.existsSync(filename)) {
+    return filename;
   }
+
+  var filenameWithPath;
 
   // `which` throws errors in sync mode
   try {
-    path = which(filename);
-    if (!path.match(filename)){
+    filenameWithPath = which(filename);
+    if (!filenameWithPath.match(filename)){
       return false;
     }
   } catch (e) {
-    path = false;
+    filenameWithPath = false;
   }
 
-  return path;
+  return filenameWithPath;
 };

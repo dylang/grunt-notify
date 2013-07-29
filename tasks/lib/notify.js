@@ -15,7 +15,7 @@ var notify = require('./platforms/growl-notify') ||
   require('./platforms/notify-send') ||
   function(options, cb) {
     // no notification system
-    cb && cb();
+    if (cb) { cb(); }
   };
 
 function removeColor(str) {
