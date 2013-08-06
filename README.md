@@ -14,7 +14,7 @@
 [![Snarl: Nodeunit](screenshots/snarl-nodeunit.png)](https://github.com/dylang/grunt-notify)
 
 #### Notify-Send for Linux
-Screenshot on loan. Can someone donate a new one?
+[![Notify-Send: Karma](screenshots/notify-send-karma.png)](https://github.com/dylang/grunt-notify)
 
 ## Getting Started
 
