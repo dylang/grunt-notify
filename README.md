@@ -14,7 +14,7 @@
 [![Snarl: Nodeunit](screenshots/snarl-nodeunit.png)](https://github.com/dylang/grunt-notify)
 
 #### Notify-Send for Linux
-[![Notify-Send: Karma](screenshots/notify-send-karma.png)](https://github.com/dylang/grunt-notify)
+[![Notify-Send: JSHint](screenshots/notify-send-jshint.png)](https://github.com/dylang/grunt-notify)
 
 ## Getting Started
 
