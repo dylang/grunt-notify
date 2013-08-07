@@ -15,7 +15,8 @@
 
 #### Notify-Send for Linux
 [![Notify-Send: JSHint](screenshots/notify-send-jshint.png)](https://github.com/dylang/grunt-notify)
-__Notifications are as they appear in Arch Linux using XFCE and the default notification theme.__
+
+_Notifications are as they appear in Arch Linux using XFCE and the default notification theme._
 
 ## Getting Started
 
