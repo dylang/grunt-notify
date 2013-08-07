@@ -14,7 +14,8 @@
 [![Snarl: Nodeunit](screenshots/snarl-nodeunit.png)](https://github.com/dylang/grunt-notify)
 
 #### Notify-Send for Linux
-Screenshot on loan. Can someone donate a new one?
+[![Notify-Send: JSHint](screenshots/notify-send-jshint.png)](https://github.com/dylang/grunt-notify)
+__Notifications are as they appear in Arch Linux using XFCE and the default notification theme.__
 
 ## Getting Started
 
