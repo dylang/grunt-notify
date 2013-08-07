@@ -10,7 +10,7 @@
 
 // try them all, one might work!
 var notify = require('./platforms/growl-notify') ||
-  require('./platforms/heysnarl') ||
+  require('./platforms/hey-snarl') ||
   require('./platforms/notification-center') ||
   require('./platforms/notify-send') ||
   function(options, cb) {
@@ -41,3 +41,4 @@ module.exports = function(options, cb) {
 
   return notify(options, cb);
 };
+
