@@ -28,9 +28,9 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.5.4",
+    "grunt-contrib-jshint": "~0.6.2",
     "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-watch": "~0.4.4"
+    "grunt-contrib-watch": "~0.5.1"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
