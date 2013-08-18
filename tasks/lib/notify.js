@@ -14,29 +14,30 @@ var notifyPlatform;
 
 function choosePlatform() {
 
+  var options = { debug: debug('grunt-notify')};
   // This needs to be cleaned up to make it easier to add new platforms
 
   var grow_notify = require('./platforms/growl-notify');
 
-  if (grow_notify.supported( {debug: debug(grow_notify.name)} )) {
+  if (grow_notify.supported(options)) {
     return grow_notify;
   }
 
   var hey_snarl = require('./platforms/hey-snarl');
 
-  if (hey_snarl.supported({debug: debug(hey_snarl.name)})) {
+  if (hey_snarl.supported(options)) {
     return hey_snarl;
   }
 
   var notification_center = require('./platforms/notification-center');
 
-  if (notification_center.supported({debug: debug(notification_center.name)})) {
+  if (notification_center.supported(options)) {
     return notification_center;
   }
 
   var notify_send = require('./platforms/notify-send');
 
-  if (notify_send.supported({debug: debug(notify_send.name)})) {
+  if (notify_send.supported(options)) {
     return notify_send;
   }
 

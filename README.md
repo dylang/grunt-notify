@@ -4,17 +4,17 @@
 
 
 #### Growl for Mac and Windows
-[![Growl: JSHint](screenshots/growl-jshint.png)](https://github.com/dylang/grunt-notify)
-[![Growl: Nodeunit](screenshots/growl-nodeunit.png)](https://github.com/dylang/grunt-notify)
+![growl-jshint](https://f.cloud.github.com/assets/51505/982676/43c372da-0814-11e3-89e5-0cb0f45f50e1.png)
+![growl-nodeunit](https://f.cloud.github.com/assets/51505/982679/4a199542-0814-11e3-93d9-5c46e2aed2d3.png)
 
 #### OS X Notifcation Center
-[![Notification Center: JSHint](screenshots/notification-center-jshint.png)](https://github.com/dylang/grunt-notify)
+![notification-center-jshint](https://f.cloud.github.com/assets/51505/982681/4e63bf88-0814-11e3-8b57-e2f5f4c2e1c1.png)
 
 #### Snarl for Windows
-[![Snarl: Nodeunit](screenshots/snarl-nodeunit.png)](https://github.com/dylang/grunt-notify)
+![snarl-nodeunit](https://f.cloud.github.com/assets/51505/982685/5419c058-0814-11e3-8976-54a811f21c92.png)
 
 #### Notify-Send for Linux
-[![Notify-Send: JSHint](screenshots/notify-send-jshint.png)](https://github.com/dylang/grunt-notify)
+![notify-send-jshint](https://f.cloud.github.com/assets/51505/982684/52c579ea-0814-11e3-81ff-4879e56b4c41.png)
 
 _Notifications are as they appear in Arch Linux using XFCE and the default notification theme._
 
@@ -37,9 +37,8 @@ grunt.loadNpmTasks('grunt-notify');
 
 **That's all you need for automatic notifications.**
 
-[![Notification Center: JSHint](screenshots/notification-center-sidebar-jshint.png)](https://github.com/dylang/grunt-notify)
-[![Grow: JSHint](screenshots/growl-jshint-lots.png)](https://github.com/dylang/grunt-notify)
-
+![notification-center-sidebar-jshint](https://f.cloud.github.com/assets/51505/982683/519b3bc2-0814-11e3-9b2b-1b07b4cf0466.png)
+![growl-jshint-lots](https://f.cloud.github.com/assets/51505/982677/46fff5f4-0814-11e3-9a21-156f80a65cbc.png)
 
 ## Notify_Hooks Options
 
@@ -68,8 +67,8 @@ grunt.task.run('notify_hooks');
 
 Sometimes you want to show messages like "Uglify complete" or "Project Deployed" - that's easy to do too.
 
-[![Growl: Custom Text](screenshots/growl-deploy.png)](https://github.com/dylang/grunt-notify)
-[![Notification Center: Custom Text](screenshots/notification-center-deploy.png)](https://github.com/dylang/grunt-notify)
+![growl-deploy](https://f.cloud.github.com/assets/51505/982678/48b6fa82-0814-11e3-890e-82518408084a.png)
+![notification-center-deploy](https://f.cloud.github.com/assets/51505/982680/4b9df1ba-0814-11e3-88a4-0736f22dedf6.png)
 
 ```js
 grunt.initConfig({
@@ -111,6 +110,9 @@ grunt.registerTask('server', [
 ## Tests
 Run `grunt` to lint and run the tests.
 
+## Notifications aren't showing
+Run `grunt --debug` to show `grunt-notify` debug messages.
+
 ## Terminal Notifier
 Apple does not provide an API to the OS X Notification Center that Node can access. Only code written in Objective C and signed in XCode can use it.
 This is not very friendly for Node users so we are using the tiny signed MIT-licensed native application
@@ -121,6 +123,8 @@ I've changed the default icon which is owned by Apple to the Grunt logo.
 This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!
 
 ## Release History
+* 18 August 2013 - 0.2.9
+ * Add debug output. Use `--debug` to see it.
 * 17 August 2013 - 0.2.8
  * Fixed bug caused Grunt-Notify to not work in 32-bit windows.
  * Fixed bug that prevented Snarl from working if the task ended quickly from an error.

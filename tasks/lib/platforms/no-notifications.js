@@ -7,9 +7,12 @@
  */
 'use strict';
 
-var NOTIFY_TYPE = 'no-notificaitons';
+var NOTIFY_TYPE = 'no-notifications';
 
-function supported() {
+function supported(options) {
+  options.debug({
+    fallback: 'No supported notification systems were found'
+  });
   return true;
 }
 
@@ -20,7 +23,6 @@ function notify(options, cb) {
   });
   cb();
 }
-
 
 module.exports = {
   name: NOTIFY_TYPE,
