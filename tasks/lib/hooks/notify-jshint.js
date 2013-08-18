@@ -77,6 +77,8 @@ module.exports = function(grunt, options) {
             message.trim()
           ].join('\n')
         });
+
+      console.log('========', message.trim());
       lineNumber = false;
       reason = false;
     }

@@ -17,14 +17,14 @@ var cmd = 'heysnarl.exe';
 
 var IS_WINDOWS = os.type() === 'Windows_NT';
 var DEFAULT_IMAGE = path.resolve(__dirname + '../../../../images/grunt-logo.png');
-var DEFAULT_TIMEOUT = 2;
-var DEFAULT_PRIORITY = 0;
 
 function findInstall() {
 
   var INSTALL_DIR = path.join('full phat', 'Snarl', 'tools');
-  var full_path = path.join(process.env.ProgramFiles, INSTALL_DIR, cmd);
-  var full_path_x86 = path.join(process.env['ProgramFiles(x86)'], INSTALL_DIR, cmd);
+  var PROGRAM_FILES = process.env.ProgramFiles || '';
+  var PROGRAM_FILES_X86 = process.env['ProgramFiles(x86)'] || '';
+  var full_path = path.join(PROGRAM_FILES, INSTALL_DIR, cmd);
+  var full_path_x86 = path.join(PROGRAM_FILES_X86, INSTALL_DIR, cmd);
 
   return cmd = findApp(cmd) ||
     findApp(full_path) ||
@@ -35,24 +35,24 @@ function isSupported() {
   return IS_WINDOWS && findInstall();
 }
 
-module.exports = isSupported() && function(options, cb) {
+function escape(str) {
+  return str.replace(/&/g, '&&').substr(0, 60);
+}
 
-  var params = url.format({
-    pathname: 'notify',
-    query: {
-      title: options.title,
-      text: options.message,
-      icon: options.image || DEFAULT_IMAGE,
-      timeout: options.timeout || DEFAULT_TIMEOUT,
-      priority: options.priority || DEFAULT_PRIORITY
+function notify(options, cb) {
+  var params =
+    'notify?' +
+    'title=' + escape(options.title) + '&' +
+    'text=' + escape(options.message) + '&' +
+    'icon=' + (options.image || DEFAULT_IMAGE);
+
+  spawn(cmd, [params], function(err, result, code){
+    if (typeof cb === 'function') {
+      cb();
     }
   });
+}
 
-  // don't want the windows version of newline
-  params = params.replace(/\%0A/g, '\n');
-
-  spawn(cmd, [params], function(err){
-    // heysnarl seems to sends err even when it doesn't need to
-    cb();
-  });
+module.exports = isSupported() && function(options, cb) {
+  notify(options, cb); //, function(){
 };

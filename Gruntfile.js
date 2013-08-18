@@ -10,27 +10,44 @@
 
 module.exports = function(grunt) {
 
-  // Project configuration.
+
   grunt.initConfig({
+    cafemocha: {
+      notify: {
+          src: 'test/**/*.test.js',
+          options: {
+              timeout: 10000,
+              ui: 'bdd',
+              reporter: 'spec',
+              require: [
+                  'chai'
+              ]
+          }
+      }
+    },
     jshint: {
       all: [
         'Gruntfile.js',
         'tasks/**/*.js',
-        '<%= nodeunit.tests %>'
+        'tests/**/*'
       ],
       fixtures: [
         'test/fixtures/*.js'
       ],
       options: {
         jshintrc: '.jshintrc',
-        force: false
+        force: true
       }
     },
 
     watch: {
       test: {
-          files: ['**/*.js'],
-          tasks: ['nodeunit', 'notify'],
+          files: [
+            'Gruntfile.js',
+            'tasks/**/*.js',
+            'test/**/*.js'
+          ],
+          tasks: ['cafemocha'],
           options: {
             nospawn: true
           }
@@ -38,13 +55,13 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    notify: {
-      custom_options: {
-        options: {
-          title: 'Notify Title',
-          message: 'This is a "Notify Message" test!'
-        }
-      },
+notify: {
+  custom_options: {
+    options: {
+      title: 'Notify Title',
+      message: 'This is a "Notify Message" test!'
+    }
+  },
       just_message: {
         options: {
           message: 'Just Message'
@@ -68,11 +85,6 @@ module.exports = function(grunt) {
           message: 'Line 1\nLine 2\nLine3\nLine 4\nLine 5.'
         }
       }
-    },
-
-    // Unit tests.
-    nodeunit: {
-      tests: ['test/*_test.js']
     }
 
   });
@@ -82,12 +94,12 @@ module.exports = function(grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
+  grunt.loadNpmTasks('grunt-cafe-mocha');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['notify', 'nodeunit']);
+  grunt.registerTask('test', ['notify', 'cafemocha']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);

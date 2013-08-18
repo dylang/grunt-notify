@@ -121,6 +121,11 @@ I've changed the default icon which is owned by Apple to the Grunt logo.
 This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!
 
 ## Release History
+* 17 August 2013 - 0.2.8
+ * Fixed bug caused Grunt-Notify to not work in 32-bit windows.
+ * Fixed bug that prevented Snarl from working if the task ended quickly from an error.
+ * Removed defaults for how many notifications and how long notifications say on the screen for Snarl.
+ * Replaced Nodeunit tests with Mocha tests.
 * 29 July 2013 - 0.2.7
  * Fixed bug that could prevent Growl from working.
 * 26 July 2013 - 0.2.5

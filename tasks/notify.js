@@ -20,8 +20,9 @@ module.exports = function gruntTask(grunt) {
   grunt.registerMultiTask('notify', 'Show an arbitrary notification whenever you need.', function() {
     var options = this.options(defaults);
 
+    var done = this.async();
     if (options.message) {
-      notify(options);
+      notify(options, done);
     }
     grunt.log.debug('Notify options:', options);
   });

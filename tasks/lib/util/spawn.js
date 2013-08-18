@@ -1,23 +1,20 @@
 'use strict';
 
 var grunt = require('grunt');
+var spawn = require('child_process').spawn;
 
 module.exports = function(cmd, args, cb){
 
   var options = {
-    detached: true
+    detached: true,
+    stdio: [ 'ignore','ignore', 'ignore' ]
   };
 
-  grunt.util.spawn({
-    cmd: cmd,
-    args: args,
-    options: options
-  }, function(err, result, code){
-    if (cb) {
-      cb(err);
-    }
-  });
+  var child = spawn(cmd, args, options);
 
+  child.on('close', function (code) {
+    cb(code);
+  });
 };
 
 
