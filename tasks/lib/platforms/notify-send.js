@@ -19,7 +19,7 @@ function supported(options) {
   var app = findApp(CMD);
 
   options.debug({
-    app: app
+    'notify-send': app || 'notify-send was not found in your path'
   });
 
   return !!findApp(CMD);

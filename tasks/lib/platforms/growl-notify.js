@@ -32,9 +32,7 @@ function supported(options) {
   var app = findApp(cmd);
 
   options.debug({
-    IS_MAC: IS_MAC,
-    IS_WINDOWS: IS_WINDOWS,
-    app_found: app
+    growl: app || (IS_MAC || IS_WINDOWS ? cmd + ' wasn\'t found. If you were hoping to use Growl, make you sure you have their command line script called Growlnotify. Mac: http://growl.info/downloads or Windows: http://www.growlforwindows.com/gfw/help/growlnotify.aspx and put it in your path. You should be able to type growlnotify --version and get something back.' : 'Growl not available for your OS.')
   });
 
   return !!app;

@@ -12,7 +12,7 @@ module.exports = function(cmd, args, cb){
 
   var child = spawn(cmd, args, options);
 
-  child.on('close', function (code) {
+  child.on('exit', function (code) {
     if (typeof cb === 'function') {
       cb(code);
     }

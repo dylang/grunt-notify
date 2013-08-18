@@ -40,7 +40,8 @@ function supported(options) {
     IS_WINDOWS: IS_WINDOWS,
     PROGRAM_FILES: process.env.ProgramFiles,
     PROGRAM_FILES_X86: process.env['ProgramFiles(x86)'],
-    app_found: fullPathToApplication
+    fullPathToApplication: fullPathToApplication,
+    snarl: fullPathToApplication || (IS_WINDOWS ? 'We couldn\'t find `heysnarl.exe` in your path or in "full phat/Snarl/tools" - maybe you have an older version?' : 'Snarl not available for this OS.')
   });
 
   return IS_WINDOWS && !!fullPathToApplication;
