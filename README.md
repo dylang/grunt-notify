@@ -123,6 +123,8 @@ I've changed the default icon which is owned by Apple to the Grunt logo.
 This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!
 
 ## Release History
+* 18 August 2013 - 0.2.11
+ * Added another directory Snarl could be installed to.
 * 18 August 2013 - 0.2.10
  * Added more information to the `--debug` output.
 * 18 August 2013 - 0.2.9
