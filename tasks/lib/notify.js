@@ -7,38 +7,74 @@
  */
 
 'use strict';
+var removeColor = require('./util/removeColor');
+var debug = require('./util/debug');
 
-// try them all, one might work!
-var notify = require('./platforms/growl-notify') ||
-  require('./platforms/hey-snarl') ||
-  require('./platforms/notification-center') ||
-  require('./platforms/notify-send') ||
-  function(options, cb) {
-    // no notification system
-    if (cb) { cb(); }
-  };
+var notifyPlatform;
 
-function removeColor(str) {
-  if (typeof str === 'string') {
-    return str.replace(/\x1B\[\d+m/g, '');
+function choosePlatform() {
+
+  // This needs to be cleaned up to make it easier to add new platforms
+
+  var grow_notify = require('./platforms/growl-notify');
+
+  if (grow_notify.supported( {debug: debug(grow_notify.name)} )) {
+    return grow_notify;
   }
-  return str;
+
+  var hey_snarl = require('./platforms/hey-snarl');
+
+  if (hey_snarl.supported({debug: debug(hey_snarl.name)})) {
+    return hey_snarl;
+  }
+
+  var notification_center = require('./platforms/notification-center');
+
+  if (notification_center.supported({debug: debug(notification_center.name)})) {
+    return notification_center;
+  }
+
+  var notify_send = require('./platforms/notify-send');
+
+  if (notify_send.supported({debug: debug(notify_send.name)})) {
+    return notify_send;
+  }
+
+  return require('./platforms/no-notifications');
 }
+
 
 /**
  * Public function to notify
  * @param options - options.message is the only required value. title is recommended. subtitle is going overboard.
  * @param [cb] - optional callback. function(err, stdout, stderr)
  */
-module.exports = function(options, cb) {
+function postNotification(options, cb) {
 
   options.title = removeColor(options.title);
   options.message = removeColor(options.message);
+
 
   if (!options.message) {
     return cb && cb(!options.message && 'Message is required');
   }
 
-  return notify(options, cb);
-};
+  if (!notifyPlatform) {
+    notifyPlatform = choosePlatform();
+  }
 
+  options.debug = debug(notifyPlatform.name); //for debug logging
+
+  return notifyPlatform.notify(options, function(err){
+      if (err) {
+        options.debug({
+          return_code: err
+        });
+      }
+      if (typeof cb === 'function') {
+        cb(err);
+      }
+    });
+}
+
+module.exports = postNotification;

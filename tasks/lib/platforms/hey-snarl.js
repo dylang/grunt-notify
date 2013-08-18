@@ -7,9 +7,10 @@
  */
 'use strict';
 
+var NOTIFY_TYPE = 'snarl';
+
 var path = require('path');
 var os = require('os');
-var url = require('url');
 var spawn = require('../util/spawn');
 var findApp = require('../util/findApp');
 
@@ -26,33 +27,48 @@ function findInstall() {
   var full_path = path.join(PROGRAM_FILES, INSTALL_DIR, cmd);
   var full_path_x86 = path.join(PROGRAM_FILES_X86, INSTALL_DIR, cmd);
 
-  return cmd = findApp(cmd) ||
+  return findApp(cmd) ||
     findApp(full_path) ||
     findApp(full_path_x86);
 }
 
-function isSupported() {
-  return IS_WINDOWS && findInstall();
+var fullPathToApplication = findInstall();
+
+function supported(options) {
+
+  options.debug({
+    IS_WINDOWS: IS_WINDOWS,
+    PROGRAM_FILES: process.env.ProgramFiles,
+    PROGRAM_FILES_X86: process.env['ProgramFiles(x86)'],
+    app_found: fullPathToApplication
+  });
+
+  return IS_WINDOWS && !!fullPathToApplication;
 }
 
 function escape(str) {
-  return str.replace(/&/g, '&&').substr(0, 60);
+  return str.toString().replace(/&/g, '&&').substr(0, 60);
 }
 
 function notify(options, cb) {
-  var params =
+
+  var args = [
     'notify?' +
     'title=' + escape(options.title) + '&' +
     'text=' + escape(options.message) + '&' +
-    'icon=' + (options.image || DEFAULT_IMAGE);
+    'icon=' + (options.image || DEFAULT_IMAGE)
+    ];
 
-  spawn(cmd, [params], function(err, result, code){
-    if (typeof cb === 'function') {
-      cb();
-    }
+  options.debug({
+    cmd: fullPathToApplication,
+    args: args.join(' ')
   });
+
+  spawn(fullPathToApplication, args, cb);
 }
 
-module.exports = isSupported() && function(options, cb) {
-  notify(options, cb); //, function(){
+module.exports = {
+  name: NOTIFY_TYPE,
+  notify: notify,
+  supported: supported
 };

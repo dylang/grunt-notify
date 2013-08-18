@@ -7,6 +7,8 @@
  */
 'use strict';
 
+var NOTIFY_TYPE = 'notification-center';
+
 var spawn = require('../util/spawn');
 var path = require('path');
 var os = require('os');
@@ -17,8 +19,19 @@ var semver = require('semver');
 // Terminal Notifier created by Eloy Durán https://github.com/alloy/terminal-notifier
 var cmd = path.resolve(__dirname + '../../../../lib/terminal-notifier/terminal-notifier.app/Contents/MacOS/terminal-notifier');
 
-function notificationCenterSupported() {
-  return os.type() === 'Darwin' && semver.satisfies(os.release(), '>=12.0.0');
+function notificationCenterSupported(options) {
+  var IS_MAC = os.type() === 'Darwin';
+  var MOUNTAIN_LION = semver.satisfies(os.release(), '>=12.0.0');
+
+  options.debug({
+    os: os.type(),
+    version: os.release(),
+    IS_MAC: IS_MAC,
+    MOUNTAIN_LION: MOUNTAIN_LION,
+    semver: semver.satisfies(os.release(), '>=12.0.0')
+  });
+
+  return IS_MAC && MOUNTAIN_LION;
 }
 
 function pluckAsArg(options, prop) {
@@ -31,11 +44,23 @@ function pluckAsArg(options, prop) {
   return [];
 }
 
-module.exports = notificationCenterSupported() && function notify(options, cb) {
+function notify(options, cb) {
 
   var args = []
       .concat(pluckAsArg(options, 'title'))
       .concat(pluckAsArg(options, 'message'));
 
+  options.debug({
+    cmd: cmd,
+    args: args.join(' ')
+  });
+
   spawn(cmd, args, cb);
+}
+
+
+module.exports = {
+  name: NOTIFY_TYPE,
+  notify: notify,
+  supported: notificationCenterSupported
 };

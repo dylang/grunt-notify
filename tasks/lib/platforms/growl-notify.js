@@ -7,6 +7,8 @@
  */
 'use strict';
 
+var NOTIFY_TYPE = 'growl';
+
 var path = require('path');
 var os = require('os');
 var findApp = require('../util/findApp');
@@ -25,8 +27,17 @@ function windowsOnly(string) {
   return IS_WINDOWS ? string : '';
 }
 
-function isSupported() {
-  return findApp(cmd);
+function supported(options) {
+
+  var app = findApp(cmd);
+
+  options.debug({
+    IS_MAC: IS_MAC,
+    IS_WINDOWS: IS_WINDOWS,
+    app_found: app
+  });
+
+  return !!app;
 }
 
 function createImageArg(image) {
@@ -83,12 +94,24 @@ function createMessageArg(message) {
   ];
 }
 
-module.exports = isSupported() && function (options, cb) {
+function notify(options, cb) {
+
   var args = []
       .concat(createImageArg(options.image))
       .concat(createMessageArg(options.message))
       .concat(createTitleArg(options.title));
 
-  spawn(cmd, args, cb);
-};
+  options.debug({
+    cmd: cmd,
+    args: args.join(' ')
+  });
 
+  spawn(cmd, args, cb);
+}
+
+
+module.exports = {
+  name: NOTIFY_TYPE,
+  supported: supported,
+  notify: notify
+};

@@ -7,21 +7,41 @@
  */
 'use strict';
 
+var NOTIFY_TYPE = 'notify-send';
+
 var spawn = require('../util/spawn');
 var findApp = require('../util/findApp');
 
-var cmd = 'notify-send';
+var CMD = 'notify-send';
 
-function isSupported() {
-  return findApp(cmd);
+function supported(options) {
+
+  var app = findApp(CMD);
+
+  options.debug({
+    app: app
+  });
+
+  return !!findApp(CMD);
 }
 
-module.exports = isSupported() && function(options, cb) {
+function notify(options, cb) {
 
   var args = [
     options.title,
     options.message
   ];
 
-  spawn(cmd, args, cb);
+  options.debug({
+    cmd: CMD,
+    args: args.join(' ')
+  });
+
+  spawn(CMD, args, cb);
+}
+
+module.exports = {
+  name: NOTIFY_TYPE,
+  notify: notify,
+  supported: supported
 };

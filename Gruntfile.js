@@ -41,27 +41,38 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      test: {
-          files: [
-            'Gruntfile.js',
-            'tasks/**/*.js',
-            'test/**/*.js'
-          ],
-          tasks: ['cafemocha'],
-          options: {
-            nospawn: true
-          }
+      example: {
+        files: [
+          'Gruntfile.js',
+          'tasks/**/*.js',
+          'test/**/*.js'
+        ],
+        tasks: ['notify:custom_options'],
+        options: {
+          nospawn: false
         }
+      },
+      test: {
+        files: [
+          'Gruntfile.js',
+          'tasks/**/*.js',
+          'test/**/*.js'
+        ],
+        tasks: ['cafemocha'],
+        options: {
+          nospawn: true
+        }
+      }
     },
 
     // Configuration to be run (and then tested).
-notify: {
-  custom_options: {
-    options: {
-      title: 'Notify Title',
-      message: 'This is a "Notify Message" test!'
-    }
-  },
+    notify: {
+      custom_options: {
+        options: {
+          title: 'Notify Title',
+          message: 'This is a "Notify Message" test!'
+        }
+      },
       just_message: {
         options: {
           message: 'Just Message'

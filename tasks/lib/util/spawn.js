@@ -7,14 +7,14 @@ module.exports = function(cmd, args, cb){
 
   var options = {
     detached: true,
-    stdio: [ 'ignore','ignore', 'ignore' ]
+    stdio: [ 'ignore', 'ignore', 'ignore' ]
   };
 
   var child = spawn(cmd, args, options);
 
   child.on('close', function (code) {
-    cb(code);
+    if (typeof cb === 'function') {
+      cb(code);
+    }
   });
 };
-
-
