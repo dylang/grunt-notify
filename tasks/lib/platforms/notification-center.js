@@ -17,7 +17,8 @@ var semver = require('semver');
 
 // OSX notification system doesn't have an API Node can access so we are using
 // Terminal Notifier created by Eloy Durán https://github.com/alloy/terminal-notifier
-var cmd = path.resolve(__dirname + '../../../../lib/terminal-notifier/terminal-notifier.app/Contents/MacOS/terminal-notifier');
+var cmd = path.resolve(__dirname, '../../../../lib/terminal-notifier/terminal-notifier.app/Contents/MacOS/terminal-notifier');
+cmd = JSON.stringify(cmd);
 
 function notificationCenterSupported(options) {
   var IS_MAC = os.type() === 'Darwin';
@@ -39,7 +40,7 @@ function pluckAsArg(options, prop) {
   if (options[prop]) {
     return [
       '-' + prop,
-      options[prop]
+      JSON.stringify(options[prop])
     ];
   }
   return [];
