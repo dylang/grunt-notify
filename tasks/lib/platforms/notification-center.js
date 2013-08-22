@@ -28,7 +28,6 @@ function notificationCenterSupported(options) {
     version: os.release(),
     IS_MAC: IS_MAC,
     MOUNTAIN_LION: MOUNTAIN_LION,
-    semver: semver.satisfies(os.release(), '>=12.0.0'),
     notification_center: MOUNTAIN_LION ? 'Will use Notification Center' : 'Not available for your OS.'
   });
 
