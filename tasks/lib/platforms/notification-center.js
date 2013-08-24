@@ -61,7 +61,13 @@ function notify(options, cb) {
     args: args.join(' ')
   });
 
-  spawn(cmd, args, cb);
+  spawn(cmd, args, function(code) {
+    if (code !== 0) {
+      cb(code);
+    } else {
+      cb();
+    }
+  });
 }
 
 

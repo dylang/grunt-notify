@@ -37,7 +37,13 @@ function notify(options, cb) {
     args: args.join(' ')
   });
 
-  spawn(CMD, args, cb);
+  spawn(CMD, args, function(code) {
+    if (code !== 0) {
+      cb(code);
+    } else {
+      cb();
+    }
+  });
 }
 
 module.exports = {

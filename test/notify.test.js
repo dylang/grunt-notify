@@ -53,37 +53,65 @@ describe('grunt-notify', function () {
     };
 
     it('growl', function (done) {
-      var growl = proxyquire('../tasks/lib/platforms/growl-notify', {'../util/spawn': fakeSpawn });
+      var growl = require('../tasks/lib/platforms/growl-notify');
       expect(growl.name).to.equal('growl');
       expect(growl.supported(options)).to.be.a.boolean;
       expect(growl.notify).to.be.a.function;
+
+      if (!growl.supported(options)) {
+        growl = proxyquire('../tasks/lib/platforms/growl-notify', {'../util/spawn': fakeSpawn });
+      }
+
       growl.notify({ title: 'title', message: 'message', debug: debug }, done);
     });
 
     it('notification center', function (done) {
-      var noteCenter = proxyquire('../tasks/lib/platforms/notification-center', {'../util/spawn': fakeSpawn });
+      var noteCenter = require('../tasks/lib/platforms/notification-center');
       expect(noteCenter.name).to.equal('notification-center');
       expect(noteCenter.supported(options)).to.be.a.boolean;
       expect(noteCenter.notify).to.be.a.function;
+
+      if (!noteCenter.supported(options)) {
+        noteCenter = proxyquire('../tasks/lib/platforms/notification-center', {'../util/spawn': fakeSpawn });
+      }
+
       noteCenter.notify({ title: 'title', message: 'message', debug: debug }, done);
     });
 
     it('snarl', function (done) {
-      var snarl = proxyquire('../tasks/lib/platforms/hey-snarl', {'../util/spawn': fakeSpawn });
+      var snarl = require('../tasks/lib/platforms/hey-snarl');
       expect(snarl.name).to.equal('snarl');
       expect(snarl.supported(options)).to.be.a.boolean;
       expect(snarl.notify).to.be.a.function;
+
+      if (!snarl.supported(options)) {
+        snarl = proxyquire('../tasks/lib/platforms/hey-snarl', {'../util/spawn': fakeSpawn });
+      }
+
       snarl.notify({ title: 'title', message: 'message', debug: debug }, done);
     });
 
     it('notify send', function (done) {
-      var notifySend = proxyquire('../tasks/lib/platforms/notify-send', {'../util/spawn': fakeSpawn });
+      var notifySend = require('../tasks/lib/platforms/notify-send');
       expect(notifySend.name).to.equal('notify-send');
       expect(notifySend.supported(options)).to.be.a.boolean;
       expect(notifySend.notify).to.be.a.function;
+
+      if (!notifySend.supported(options)) {
+        notifySend = proxyquire('../tasks/lib/platforms/notify-send', {'../util/spawn': fakeSpawn });
+      }
+
       notifySend.notify({ title: 'title', message: 'message', debug: debug }, done);
     });
 
+    it('no notifications', function (done) {
+      var noNotes = require('../tasks/lib/platforms/no-notifications');
+      expect(noNotes.name).to.equal('no-notifications');
+      expect(noNotes.supported(options)).to.be.a.boolean;
+      expect(noNotes.notify).to.be.a.function;
+
+      noNotes.notify({ title: 'title', message: 'message', debug: debug }, done);
+    });
 
   });
 
