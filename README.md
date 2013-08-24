@@ -123,46 +123,9 @@ I've changed the default icon which is owned by Apple to the Grunt logo.
 This project was created for and is used by the free game I co-created for Node Knockout called [Doodle or Die](http://doodleOrDie.com). Please give it a try, we think you will enjoy it!
 
 ## Release History
-* 18 August 2013 - 0.2.11
- * Added another directory Snarl could be installed to.
-* 18 August 2013 - 0.2.10
- * Added more information to the `--debug` output.
-* 18 August 2013 - 0.2.9
- * Add debug output. Use `--debug` to see it.
-* 17 August 2013 - 0.2.8
- * Fixed bug caused Grunt-Notify to not work in 32-bit windows.
- * Fixed bug that prevented Snarl from working if the task ended quickly from an error.
- * Removed defaults for how many notifications and how long notifications say on the screen for Snarl.
- * Replaced Nodeunit tests with Mocha tests.
-* 29 July 2013 - 0.2.7
- * Fixed bug that could prevent Growl from working.
-* 26 July 2013 - 0.2.5
- * [Windows Snarl](http://snarl.fullphat.net/) support thanks to [@vohof](https://github.com/vohof) and [@FunkMonkey](https://github.com/FunkMonkey).
-* 30 May 2013 - 0.2.4
- * Make notications more reliable. They should show up now even if Grunt exists from an error.
- * Fix problems with `\n` in a windows path becoming a new line, like `c:\new`.
- * Don't show too many jshint errors. By default only 5 jshint notifications, and that number is configurable.
-* 4 Apr 2013 - 0.2.3
- * Avoid problems when there's no stack trace on errors thanks to [@joeybaker](https://github.com/joeybaker).
-* 1 Apr 2013 - 0.2.2
- * Fix bug in Notify-Send thanks to [@jcoffin](https://github.com/jcoffin).
-* 1 Apr 2013 - 0.2.1
- * Fix dependencies.
-* 31 Mar 2013 - 0.2.0
- * Complete rewrite.
- * New support for Grunt in Windows.
- * Now parses JSLint errors to show them in notification.
- * Notification title will automatically use package.json name field or directory name.
- * No more subtitle option.
- * Title now includes the task that was running.
- * Better command line escaping including support for newline `\n`.
-* 17 Mar 2013 - 0.1.6
- * Code refactor to clean things up
-* 19 Feb 2013 - 0.1.4
- * Added Linux support thanks to [@johnmccalla](https://github.com/johnmccalla).
- * Listen for fatal errors.
- * Simplified options.
- * Default title is project title.
- * Show file name and line number if available.
-* 28 Dec 2012 - 0.1.0-0.1.3
- * First version
+
+See [CHANGELOG.md](CHANGELOG.md) for changes.
+
+## License
+
+[LICENSE-MIT](MIT)
