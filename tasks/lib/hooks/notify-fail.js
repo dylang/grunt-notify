@@ -9,6 +9,8 @@
 
 module.exports = function(grunt, options) {
 
+  var message_count = 0;
+
   var StackParser = require('stack-parser');
   var notify = require('../notify-lib');
 
@@ -45,6 +47,8 @@ module.exports = function(grunt, options) {
    */
   function notifyHook(e) {
 
+    message_count++;
+
     var message;
 
     if (!options.enabled) {
@@ -67,7 +71,10 @@ module.exports = function(grunt, options) {
       message = e;
     }
 
-    //grunt.log.ok('!!!!!!', message);
+    if (message_count > 0 && message === 'Aborted due to warnings.') {
+      // skip unhelpful message because there was probably another one that was more helpful
+      return;
+    }
 
     return notify({
       title:    options.title + (grunt.task.current.nameArgs ? ' ' + grunt.task.current.nameArgs : ''),
