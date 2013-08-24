@@ -66,7 +66,14 @@ function notify(options, cb) {
     args: args.join(' ')
   });
 
-  spawn(fullPathToApplication, args, cb);
+  spawn(fullPathToApplication || 'echo', args, function(code){
+    options.debug({return_code: code});
+    if (code < 200 && code > 0) {
+      cb(code);
+    } else {
+      cb();
+    }
+  });
 }
 
 module.exports = {

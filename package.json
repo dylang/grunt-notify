@@ -31,7 +31,8 @@
     "grunt-contrib-jshint": "~0.6.2",
     "grunt-contrib-watch": "~0.5.1",
     "grunt-cafe-mocha": "~0.1.8",
-    "chai": "~1.7.2"
+    "chai": "~1.7.2",
+    "proxyquire": "~0.5.1"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
