@@ -15,12 +15,13 @@ var notifyPlatform;
 function choosePlatform() {
 
   var options = { debug: debug('grunt-notify')};
+
   // This needs to be cleaned up to make it easier to add new platforms
 
-  var grow_notify = require('./platforms/growl-notify');
+  var growl_notify = require('./platforms/growl-notify');
 
-  if (grow_notify.supported(options)) {
-    return grow_notify;
+  if (growl_notify.supported(options)) {
+    return growl_notify;
   }
 
   var hey_snarl = require('./platforms/hey-snarl');
@@ -54,7 +55,6 @@ function postNotification(options, cb) {
 
   options.title = removeColor(options.title);
   options.message = removeColor(options.message);
-
 
   if (!options.message) {
     return cb && cb(!options.message && 'Message is required');

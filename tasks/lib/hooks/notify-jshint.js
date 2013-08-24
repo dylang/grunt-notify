@@ -9,7 +9,7 @@
 
 module.exports = function(grunt, options) {
 
-  var notify = require('../notify');
+  var notify = require('../notify-lib');
 
   var filename;
   var reason;

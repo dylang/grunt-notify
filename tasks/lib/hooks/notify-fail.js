@@ -10,7 +10,7 @@
 module.exports = function(grunt, options) {
 
   var StackParser = require('stack-parser');
-  var notify = require('../notify');
+  var notify = require('../notify-lib');
 
   function exception(e) {
     var stackDump, stack, message;

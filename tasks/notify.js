@@ -8,7 +8,7 @@
 'use strict';
 module.exports = function gruntTask(grunt) {
 
-  var notify = require('./lib/notify');
+  var notify = require('./lib/notify-lib');
   var guessProjectName = require('./lib/util/guessProjectName');
 
   var defaults = {
@@ -23,7 +23,8 @@ module.exports = function gruntTask(grunt) {
 
     if (options.message) {
       notify(options, done);
+    } else {
+      done(new Error('Notify message is required. Make sure your notify configuration is inside an options object.'));
     }
   });
-
 };
