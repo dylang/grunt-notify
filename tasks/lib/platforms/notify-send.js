@@ -9,8 +9,10 @@
 
 var NOTIFY_TYPE = 'notify-send';
 
+var path = require('path');
 var spawn = require('../util/spawn');
 var findApp = require('../util/findApp');
+var DEFAULT_IMAGE = path.resolve(__dirname + '../../../../images/grunt-logo.png');
 
 var CMD = 'notify-send';
 
@@ -28,6 +30,7 @@ function supported(options) {
 function notify(options, cb) {
 
   var args = [
+    '--icon=' + DEFAULT_IMAGE,
     options.title,
     options.message
   ];
