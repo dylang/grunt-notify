@@ -1,3 +1,5 @@
+* 26 August 2014 - 0.2.13
+ * Added Grunt icon to `notify-send`.
 * 24 August 2014 - 0.2.12
  * Fix bug causing exception with Semver in Linux, thanks to [@theefer](https://github.com/theefer).
  * Won't notify `Aborted due to warnings.` when there was already a more helpful notification.

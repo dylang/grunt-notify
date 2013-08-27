@@ -15,9 +15,8 @@
 ![snarl-nodeunit](https://f.cloud.github.com/assets/51505/982685/5419c058-0814-11e3-8976-54a811f21c92.png)
 
 #### Notify-Send for Linux
-![notify-send-jshint](https://f.cloud.github.com/assets/51505/982684/52c579ea-0814-11e3-81ff-4879e56b4c41.png)
+![notify-send - jshint](https://f.cloud.github.com/assets/51505/1030946/056631f4-0ecb-11e3-97cb-46e12c484f8b.png)
 
-_Notifications are as they appear in Arch Linux using XFCE and the default notification theme._
 
 ## Getting Started
 
@@ -70,6 +69,7 @@ Sometimes you want to show messages like "Uglify complete" or "Project Deployed"
 
 ![growl-deploy](https://f.cloud.github.com/assets/51505/982678/48b6fa82-0814-11e3-890e-82518408084a.png)
 ![notification-center-deploy](https://f.cloud.github.com/assets/51505/982680/4b9df1ba-0814-11e3-88a4-0736f22dedf6.png)
+![notify-send custom](https://f.cloud.github.com/assets/51505/1030945/038e46dc-0ecb-11e3-9915-80c1838624a8.png)
 
 ```js
 grunt.initConfig({
