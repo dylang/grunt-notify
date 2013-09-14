@@ -69,7 +69,7 @@ function createImageArg(image) {
 
   if (IS_WINDOWS) {
     return [
-      '/i:' + image
+      '/i:"' + image.replace(new RegExp(/\\/g),'/') + '"'
     ];
   }
 
