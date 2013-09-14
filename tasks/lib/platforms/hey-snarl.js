@@ -55,10 +55,10 @@ function escape(str) {
 function notify(options, cb) {
 
   var args = [
-    'notify?' +
+    '"notify?' +
     'title=' + escape(options.title) + '&' +
     'text=' + escape(options.message) + '&' +
-    'icon=' + (options.image || DEFAULT_IMAGE)
+    'icon=' + (options.image || DEFAULT_IMAGE.replace(new RegExp(/\\/g),'/'))  + '"'
     ];
 
   options.debug({
