@@ -82,14 +82,19 @@ module.exports = function(grunt, options) {
     });
   }
 
-  // run on warning
-  grunt.util.hooker.hook(grunt, 'warn', notifyHook);
-  grunt.util.hooker.hook(grunt.fail, 'warn', notifyHook);
-  // run on error
-  grunt.util.hooker.hook(grunt.fail, 'error', notifyHook);
-  grunt.util.hooker.hook(grunt.log, 'fail', notifyHook);
-  // run on fatal
-  grunt.util.hooker.hook(grunt.fail, 'fatal', notifyHook);
+  // attach the notification hooks every time before an event is
+  // fired, just in case any of the fail or warning methods where
+  // overidden
+  grunt.event.on('*', function () {
+    // run on warning
+    grunt.util.hooker.hook(grunt, 'warn', notifyHook);
+    grunt.util.hooker.hook(grunt.fail, 'warn', notifyHook);
+    // run on error
+    grunt.util.hooker.hook(grunt.fail, 'error', notifyHook);
+    grunt.util.hooker.hook(grunt.log, 'fail', notifyHook);
+    // run on fatal
+    grunt.util.hooker.hook(grunt.fail, 'fatal', notifyHook);
+  });
 
   function setOptions(opts) {
     options = opts;
