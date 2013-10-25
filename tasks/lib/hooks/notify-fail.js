@@ -88,6 +88,7 @@ module.exports = function(grunt, options) {
   // run on error
   grunt.util.hooker.hook(grunt.fail, 'error', notifyHook);
   grunt.util.hooker.hook(grunt.log, 'fail', notifyHook);
+  grunt.util.hooker.hook(grunt.log, 'error', notifyHook);
   // run on fatal
   grunt.util.hooker.hook(grunt.fail, 'fatal', notifyHook);
 
