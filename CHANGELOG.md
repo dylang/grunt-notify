@@ -1,3 +1,5 @@
+* 29 October 2014 - 0.2.14
+ * Since grunt-contrib-watch can overwrite grunt's warn and fatal functions, we now watch writeln as well for warnings and fatals.
 * 26 August 2014 - 0.2.13
  * Added Grunt icon to `notify-send`.
 * 24 August 2014 - 0.2.12

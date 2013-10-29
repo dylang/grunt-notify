@@ -10,14 +10,40 @@
 module.exports = function(grunt, options) {
 
   var message_count = 0;
-
   var StackParser = require('stack-parser');
   var notify = require('../notify-lib');
+  var removeColor = require('../util/removeColor');
+
+  // Don't show the same message twice in a row
+  var previousMessage;
+  var previousMessageTimeoutMS = 500;
+  var previousMessageTimer;
+
+  var cwd = process.cwd();
+
+  function watchForContribWatchWarnings(e) {
+
+    if (!e || typeof e !== 'string') {
+        return;
+    }
+
+    var msg = removeColor(e);
+    msg = msg.replace(' Use --force to continue.', '');
+
+    if (msg.indexOf('Warning:') === 0) {
+        return notifyHook(msg.replace('Warning: ', ''));
+    }
+    if (msg.indexOf('Fatal error:') === 0) {
+        return notifyHook(msg.replace('Fatal error: ', ''));
+    }
+
+    return e;
+  }
 
   function exception(e) {
     var stackDump, stack, message;
 
-    if (typeof e.stack !== 'string'){
+    if (e.stack && typeof e.stack !== 'string'){
       stackDump = StackParser.parse(e.stack);
       stack = stackDump[0];
 
@@ -29,7 +55,7 @@ module.exports = function(grunt, options) {
 
     if (stack && stack.file) {
       message = [
-        stack.file.replace(process.cwd(), ''),
+        stack.file.replace(cwd, ''),
         'Line ' + stack.line,
         e.message
       ].join('\n');
@@ -76,6 +102,23 @@ module.exports = function(grunt, options) {
       return;
     }
 
+    // shorten message by removing full path
+    // TODO - make a global replace
+    message = message.replace(cwd, '').replace('\x07', '');
+
+    function resetPreviousTimer(newMessage) {
+      previousMessage = newMessage;
+      clearTimeout(previousMessageTimer);
+      previousMessageTimer = setTimeout(function(){previousMessage = false;}, previousMessageTimeoutMS);
+    }
+
+    if (message === previousMessage) {
+      resetPreviousTimer(message);
+      return;
+    }
+
+    resetPreviousTimer(message);
+
     return notify({
       title:    options.title + (grunt.task.current.nameArgs ? ' ' + grunt.task.current.nameArgs : ''),
       message:  message
@@ -90,6 +133,11 @@ module.exports = function(grunt, options) {
   grunt.util.hooker.hook(grunt.log, 'fail', notifyHook);
   // run on fatal
   grunt.util.hooker.hook(grunt.fail, 'fatal', notifyHook);
+
+  // grunt-contrib-watch replaces some of these functions so
+  // we need to watch all writeln's too
+  // https://github.com/gruntjs/grunt-contrib-watch/issues/232
+  grunt.util.hooker.hook(grunt.log, 'writeln', watchForContribWatchWarnings);
 
   function setOptions(opts) {
     options = opts;
