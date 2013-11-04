@@ -1,7 +1,7 @@
 # grunt-notify [![Build Status](https://travis-ci.org/dylang/grunt-notify.png?branch=master)](https://travis-ci.org/dylang/grunt-notify)
 
 
-> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, Snarl, and Notify-Send.
+> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion/Mavericks Notification Center, Snarl, and Notify-Send.
 
 
 #### Growl for Mac and Windows

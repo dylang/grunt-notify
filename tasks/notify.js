@@ -8,8 +8,8 @@
 'use strict';
 module.exports = function gruntTask(grunt) {
 
-  var notify = require('./lib/notify-lib');
-  var guessProjectName = require('./lib/util/guessProjectName');
+  var notify = require('../lib/notify-lib');
+  var guessProjectName = require('../lib/util/guessProjectName');
 
   var defaults = {
     title:    guessProjectName(),

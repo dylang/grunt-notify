@@ -1,3 +1,5 @@
+* 3 November 2014 - 0.2.15
+ * Fixed issue with OS X 10.9 Mavericks. Unfortunately Apple took away the ability to customize the icon.
 * 29 October 2014 - 0.2.14
  * Since grunt-contrib-watch can overwrite grunt's warn and fatal functions, we now watch writeln as well for warnings and fatals.
 * 26 August 2014 - 0.2.13

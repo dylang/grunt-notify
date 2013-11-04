@@ -1,7 +1,7 @@
 {
   "name": "grunt-notify",
-  "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion Notification Center, and Notify-Send.",
-  "version": "0.2.14",
+  "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send.",
+  "version": "0.2.15",
   "homepage": "https://github.com/dylang/grunt-notify",
   "author": {
     "name": "Dylan Greene",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "grunt-contrib-jshint": "~0.6.2",
     "grunt-contrib-watch": "~0.5.1",
-    "grunt-cafe-mocha": "~0.1.8",
+    "grunt-mocha-test": "~0.7.0",
     "chai": "~1.7.2",
     "proxyquire": "~0.5.1"
   },
@@ -43,6 +43,7 @@
     "notify",
     "growl",
     "mountain lion",
+    "mavericks",
     "linux",
     "notify-send",
     "error",
