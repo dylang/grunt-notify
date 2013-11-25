@@ -40,6 +40,14 @@ grunt.loadNpmTasks('grunt-notify');
 ![notification-center-sidebar-jshint](https://f.cloud.github.com/assets/51505/982683/519b3bc2-0814-11e3-9b2b-1b07b4cf0466.png)
 ![growl-jshint-lots](https://f.cloud.github.com/assets/51505/982677/46fff5f4-0814-11e3-9a21-156f80a65cbc.png)
 
+### Growl 
+
+If you would like to use Growl, make you sure you have their command line script called Growlnotify and put it in your path.
+ - Mac: http://growl.info/downloads 
+ - Windows: http://www.growlforwindows.com/gfw/help/growlnotify.aspx and. 
+
+You should be able to type growlnotify --version and get something back.
+
 ## Notify_Hooks Options
 
 If you want change the automatic messaging configure a task called `notify_hooks`.
