@@ -7,15 +7,15 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>terminal-notifier</string>
+	<string>Grunt</string>
 	<key>CFBundleIconFile</key>
-	<string>Terminal</string>
+	<string>Grunt</string>
 	<key>CFBundleIdentifier</key>
-	<string>nl.superalloy.oss.terminal-notifier</string>
+	<string>com.resolute.vivekvasani.Grunt</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>terminal-notifier</string>
+	<string>Grunt</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -27,7 +27,7 @@
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string>5A2053</string>
+	<string>5A3005</string>
 	<key>DTPlatformVersion</key>
 	<string>GM</string>
 	<key>DTSDKBuild</key>
@@ -35,9 +35,11 @@
 	<key>DTSDKName</key>
 	<string>macosx10.9</string>
 	<key>DTXcode</key>
-	<string>0501</string>
+	<string>0502</string>
 	<key>DTXcodeBuild</key>
-	<string>5A2053</string>
+	<string>5A3005</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.8</string>
 	<key>LSUIElement</key>
