@@ -1,3 +1,7 @@
+* 5 January 2015 - 0.2.17
+ * New documenation system powered by grunt-readme.
+ * New section in docs about the notification systems.
+ * More doc improvements coming in the future.
 * 7 November 2014 - 0.2.16
  * Avoid duplicate messages.
 * 3 November 2014 - 0.2.15
