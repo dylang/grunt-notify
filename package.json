@@ -35,9 +35,7 @@
     "proxyquire": "~0.5.1",
     "load-grunt-tasks": "~0.2.0",
     "time-grunt": "~0.2.3",
-    "grunt-repos": "~0.1.2",
-    "grunt-templates-dylang": "0.0.3",
-    "grunt-readme": "~0.4.5"
+    "grunt-templates-dylang": "~0.1.0"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
