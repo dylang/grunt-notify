@@ -28,11 +28,16 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.6.2",
+    "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-watch": "~0.5.1",
-    "grunt-mocha-test": "~0.7.0",
-    "chai": "~1.7.2",
-    "proxyquire": "~0.5.1"
+    "grunt-mocha-test": "~0.8.1",
+    "chai": "~1.8.1",
+    "proxyquire": "~0.5.1",
+    "load-grunt-tasks": "~0.2.0",
+    "time-grunt": "~0.2.3",
+    "grunt-repos": "~0.1.2",
+    "grunt-templates-dylang": "0.0.3",
+    "grunt-readme": "~0.4.5"
   },
   "peerDependencies": {
     "grunt": "~0.4.1"
@@ -53,6 +58,6 @@
   "dependencies": {
     "stack-parser": "~0.0.1",
     "which": "~1.0.5",
-    "semver": "~2.1.0"
+    "semver": "~2.2.1"
   }
 }

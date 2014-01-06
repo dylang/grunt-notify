@@ -10,61 +10,9 @@
 
 module.exports = function(grunt) {
 
+  require('time-grunt')(grunt);
 
   grunt.initConfig({
-    mochaTest: {
-      notify: {
-          src: 'test/**/*.test.js',
-          options: {
-              timeout: 10000,
-              ui: 'bdd',
-              reporter: 'spec',
-              require: [
-                  'chai'
-              ]
-          }
-      }
-    },
-    jshint: {
-      all: [
-        'Gruntfile.js',
-        'tasks/**/*.js',
-        'tests/**/*'
-      ],
-      fixtures: [
-        'test/fixtures/*.js'
-      ],
-      options: {
-        jshintrc: '.jshintrc',
-        force: true
-      }
-    },
-
-    watch: {
-      example: {
-        files: [
-          'Gruntfile.js',
-          'tasks/**/*.js',
-          'test/**/*.js'
-        ],
-        tasks: ['notify:custom_options'],
-        options: {
-          nospawn: false
-        }
-      },
-      test: {
-        files: [
-          'Gruntfile.js',
-          'tasks/**/*.js',
-          'test/**/*.js'
-        ],
-        tasks: ['cafemocha'],
-        options: {
-          nospawn: true
-        }
-      }
-    },
-
     // Configuration to be run (and then tested).
     notify: {
       custom_options: {
@@ -96,23 +44,78 @@ module.exports = function(grunt) {
           message: 'Line 1\nLine 2\nLine3\nLine 4\nLine 5.'
         }
       }
+    },
+
+    watch: {
+      example: {
+        options: {
+          spawn: true
+        },
+        files: [
+          'Gruntfile.js',
+          'tasks/**/*.js',
+          'test/**/*.js'
+        ],
+        tasks: [
+          'notify:custom_options'
+        ]
+      },
+      test: {
+        options: {
+          spawn: true
+        },
+        files: [
+          'Gruntfile.js',
+          'tasks/**/*.js',
+          'test/**/*.js'
+        ],
+        tasks: [
+          'jshint',
+          'mochaTest'
+        ]
+      }
+    },
+
+    mochaTest: {
+      notify: {
+          src: 'test/**/*.test.js',
+          options: {
+              reporter: 'spec'
+          }
+      }
+    },
+
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+        force: true
+      },
+      all: [
+        'Gruntfile.js',
+        'tasks/**/*.js',
+        'tests/**/*'
+      ],
+      fixtures: [
+        'test/fixtures/*.js'
+      ]
     }
 
   });
 
-  // Actually load this plugin's task(s).
+  require('load-grunt-tasks')(grunt);
   grunt.loadTasks('tasks');
-
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-mocha-test');
-  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['notify', 'mochaTest']);
+  grunt.registerTask('test', [
+    'jshint',
+    'notify',
+    'mochaTest'
+  ]);
 
   // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'test']);
+  grunt.registerTask('default', [
+    'test'
+  ]);
 
 };
