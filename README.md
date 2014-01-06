@@ -201,16 +201,16 @@ Here are some other Node modules Dylan has created:
 
 | Name | Description | Github Stars | Npm Installs |
 |---|---|--:|--:| 
- | [grunt-prompt]() | Add interactive console prompts to your Gruntfile such as lists, checkboxes, text input with filtering, and password fields. | 117 | 4,832 | 
- | [rss]() | RSS feed generator. A really simple API to add RSS feeds to any project. | 171 | 88,235 | 
- | [anthology]() | Module information and stats for any @npmjs user | _New!_ | _TBD_ | 
- | [shortid]() | Amazingly short non-sequential url-friendly unique id generator. | 123 | 20,441 | 
- | [xml]() | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | 32 | 168,752 | 
- | [observatory]() | Beautiful UI for showing tasks running on the command line. | _New!_ | 74 | 
- | [grunt-attention]() | Display attention-grabbing messages in the terminal | _New!_ | 214 | 
- | [changelog]() | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | 46 | 2,040 | 
- | [logging]() | Super sexy color console logging with cluster support. | 21 | 8,626 | 
- | [grunt-cat]() | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | _New!_ | 384 |
+| [grunt-prompt]() | Add interactive console prompts to your Gruntfile such as lists, checkboxes, text input with filtering, and password fields. | 117 | 4,832 |
+| [rss]() | RSS feed generator. A really simple API to add RSS feeds to any project. | 171 | 88,235 |
+| [anthology]() | Module information and stats for any @npmjs user | _New!_ | _TBD_ |
+| [shortid]() | Amazingly short non-sequential url-friendly unique id generator. | 123 | 20,441 |
+| [xml]() | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | 32 | 168,752 |
+| [observatory]() | Beautiful UI for showing tasks running on the command line. | _New!_ | 74 |
+| [grunt-attention]() | Display attention-grabbing messages in the terminal | _New!_ | 214 |
+| [changelog]() | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | 46 | 2,040 |
+| [logging]() | Super sexy color console logging with cluster support. | 21 | 8,626 |
+| [grunt-cat]() | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | _New!_ | 384 |
 
 _Data collected on Sunday, January 5, 2014 using [anthology](https://github.com/dylang/anthology)._
 
