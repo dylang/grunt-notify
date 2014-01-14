@@ -14,6 +14,7 @@ module.exports = function gruntTask(grunt) {
   // All of these settings are customizable via notify_hooks
   var defaults = {
     enabled: true,
+    type:'error',
     max_jshint_notifications: 5,
     title: guessProjectName()
   };
