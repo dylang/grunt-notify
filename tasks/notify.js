@@ -12,7 +12,7 @@ module.exports = function gruntTask(grunt) {
   var guessProjectName = require('../lib/util/guessProjectName');
 
   var defaults = {
-    type: 'error',
+    type: 'failure',
     title:    guessProjectName(),
     message:  '' //required
   };
