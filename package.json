@@ -30,10 +30,10 @@
   "devDependencies": {
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-watch": "~0.5.1",
-    "grunt-mocha-test": "~0.8.1",
-    "chai": "~1.8.1",
+    "grunt-mocha-test": "~0.9.0",
+    "chai": "~1.9.0",
     "proxyquire": "~0.5.1",
-    "load-grunt-tasks": "~0.2.0",
+    "load-grunt-tasks": "~0.3.0",
     "time-grunt": "~0.2.3",
     "grunt-templates-dylang": "~0.1.0"
   },
