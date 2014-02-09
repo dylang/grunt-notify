@@ -91,9 +91,11 @@ Sometimes you want to show messages like "Uglify complete" or "Project Deployed"
 | ![Custom Message - Grunt](https://f.cloud.github.com/assets/51505/982678/48b6fa82-0814-11e3-890e-82518408084a.png "Custom Message - Grunt") |
 |:-------------:|
 | Custom Message - Grunt |
+
 | ![Custom Message - Notification Center](https://f.cloud.github.com/assets/51505/982680/4b9df1ba-0814-11e3-88a4-0736f22dedf6.png "Custom Message - Notification Center") |
 |:-------------:|
 | Custom Message - Notification Center |
+
 | ![Custom Message - Notify-Send](https://f.cloud.github.com/assets/51505/1030945/038e46dc-0ecb-11e3-9915-80c1838624a8.png "Custom Message - Notify-Send") |
 |:-------------:|
 | Custom Message - Notify-Send |
