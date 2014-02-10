@@ -9,6 +9,19 @@ Use `grunt readme` to regenerate.
 
 > Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send.
 
+[![grunt-notify](https://nodei.co/npm/grunt-notify.png?downloads=true "grunt-notify")](https://nodei.co/npm/grunt-notify)
+
+
+### Screenshots
+
+| OS | Tool | Screenshots |
+|---|---|---|
+| OS X | OS X Notification Center | ![OS X Notification Center](https://f.cloud.github.com/assets/51505/982681/4e63bf88-0814-11e3-8b57-e2f5f4c2e1c1.png "OS X Notification Center") |
+| OS X | Growl for Mac | ![Growl for Mac](https://f.cloud.github.com/assets/51505/982676/43c372da-0814-11e3-89e5-0cb0f45f50e1.png "Growl for Mac") |
+| Windows | Growl for Windows | ![Growl for Windows](https://f.cloud.github.com/assets/51505/982679/4a199542-0814-11e3-93d9-5c46e2aed2d3.png "Growl for Windows") |
+| Windows | Snarl | ![Snarl](https://f.cloud.github.com/assets/51505/982685/5419c058-0814-11e3-8976-54a811f21c92.png "Snarl") |
+| Linux | Notify-Send | ![Notify-Send](https://f.cloud.github.com/assets/51505/1030946/056631f4-0ecb-11e3-97cb-46e12c484f8b.png "Notify-Send") |
+
 
 
 ### Getting Started
@@ -30,35 +43,6 @@ grunt.loadNpmTasks('grunt-notify');
 
 
 **That's all you need for automatic notifications.**
-
-### Screenshots
-
-##### OS X
-
-| ![notification-center-jshint](https://f.cloud.github.com/assets/51505/982681/4e63bf88-0814-11e3-8b57-e2f5f4c2e1c1.png) ![notification-center-sidebar-jshint](https://f.cloud.github.com/assets/51505/982683/519b3bc2-0814-11e3-9b2b-1b07b4cf0466.png) |
-|:-------------:|
-| OS X Notification Center |
-
-| ![Growl for Mac](https://f.cloud.github.com/assets/51505/982676/43c372da-0814-11e3-89e5-0cb0f45f50e1.png "Growl for Mac") |
-|:-------------:|
-| Growl for Mac |
-
-##### Windows
-
-| ![Growl for Windows](https://f.cloud.github.com/assets/51505/982679/4a199542-0814-11e3-93d9-5c46e2aed2d3.png "Growl for Windows") |
-|:-------------:|
-| Growl for Windows |
-
-| ![Snarl](https://f.cloud.github.com/assets/51505/982685/5419c058-0814-11e3-8976-54a811f21c92.png "Snarl") |
-|:-------------:|
-| Snarl |
-
-##### Linux
-
-| ![Notify-Send](https://f.cloud.github.com/assets/51505/1030946/056631f4-0ecb-11e3-97cb-46e12c484f8b.png "Notify-Send") |
-|:-------------:|
-| Notify-Send |
-
 
 ### Notify_Hooks Options
 
@@ -222,18 +206,18 @@ I'm [dylang](https://twitter.com/dylang) on Twitter and other places.
 
 Some of my other Node projects:
 
-| Name | Description | Github Stars | Npm Installs |
+| Name | Description | Npm |
 |---|---|--:|--:|
-| [`grunt-prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | 142 | 6,885 |
-| [`rss`](https://github.com/dylang/node-rss) | RSS feed generator. A really simple API to add RSS feeds to any project. | 177 | 98,802 |
-| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | 129 | 22,984 |
-| [`xml`](https://github.com/dylang/node-xml) | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | 35 | 180,625 |
-| [`anthology`](https://github.com/dylang/anthology) | Module information and stats for any @npmjs user | _New!_ | _TBD_ |
-| [`grunt-attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal | _New!_ | 336 |
-| [`observatory`](https://github.com/dylang/observatory) | Beautiful UI for showing tasks running on the command line. | _New!_ | 81 |
-| [`changelog`](https://github.com/dylang/changelog) | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | 51 | 2,081 |
-| [`logging`](https://github.com/dylang/logging) | Super sexy color console logging with cluster support. | 21 | 8,793 |
-| [`grunt-cat`](https://github.com/dylang/grunt-cat) | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | _New!_ | 396 |
+| [`grunt-prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | [![grunt-prompt](https://nodei.co/npm/grunt-prompt.png?downloads=true "grunt-prompt")](https://nodei.co/npm/grunt-prompt) |
+| [`rss`](https://github.com/dylang/node-rss) | RSS feed generator. A really simple API to add RSS feeds to any project. | [![rss](https://nodei.co/npm/rss.png?downloads=true "rss")](https://nodei.co/npm/rss) |
+| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | [![shortid](https://nodei.co/npm/shortid.png?downloads=true "shortid")](https://nodei.co/npm/shortid) |
+| [`xml`](https://github.com/dylang/node-xml) | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | [![xml](https://nodei.co/npm/xml.png?downloads=true "xml")](https://nodei.co/npm/xml) |
+| [`anthology`](https://github.com/dylang/anthology) | Module information and stats for any @npmjs user | [![anthology](https://nodei.co/npm/anthology.png?downloads=true "anthology")](https://nodei.co/npm/anthology) |
+| [`grunt-attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal | [![grunt-attention](https://nodei.co/npm/grunt-attention.png?downloads=true "grunt-attention")](https://nodei.co/npm/grunt-attention) |
+| [`observatory`](https://github.com/dylang/observatory) | Beautiful UI for showing tasks running on the command line. | [![observatory](https://nodei.co/npm/observatory.png?downloads=true "observatory")](https://nodei.co/npm/observatory) |
+| [`changelog`](https://github.com/dylang/changelog) | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | [![changelog](https://nodei.co/npm/changelog.png?downloads=true "changelog")](https://nodei.co/npm/changelog) |
+| [`logging`](https://github.com/dylang/logging) | Super sexy color console logging with cluster support. | [![logging](https://nodei.co/npm/logging.png?downloads=true "logging")](https://nodei.co/npm/logging) |
+| [`grunt-cat`](https://github.com/dylang/grunt-cat) | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | [![grunt-cat](https://nodei.co/npm/grunt-cat.png?downloads=true "grunt-cat")](https://nodei.co/npm/grunt-cat) |
 
 _This list was generated using [anthology](https://github.com/dylang/anthology)._
 
@@ -246,7 +230,7 @@ Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Saturday, February 8, 2014._ [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dylang/grunt-notify/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Google Analytics](https://ga-beacon.appspot.com/UA-4820261-3/dylang/grunt-notify)](https://github.com/igrigorik/ga-beacon)
+_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Sunday, February 9, 2014._ [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dylang/grunt-notify/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Google Analytics](https://ga-beacon.appspot.com/UA-4820261-3/dylang/grunt-notify)](https://github.com/igrigorik/ga-beacon)
 
 
 <!---

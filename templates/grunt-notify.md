@@ -1,7 +1,5 @@
 **That's all you need for automatic notifications.**
 
-{%= _.doc('readme/screenshots.md') %}
-
 {%= _.doc('readme/options-notify-hooks.md') %}
 
 {%= _.doc('readme/options-notify.md') %}
