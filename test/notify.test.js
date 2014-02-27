@@ -104,6 +104,19 @@ describe('grunt-notify', function () {
       notifySend.notify({ title: 'title', message: 'message', debug: debug }, done);
     });
 
+    it('toaster', function (done) {
+      var toaster = require('../lib/platforms/toaster');
+      expect(toaster.name).to.equal('toaster');
+      expect(toaster.supported(options)).to.be.a.boolean;
+      expect(toaster.notify).to.be.a.function;
+
+      if (!toaster.supported(options)) {
+        toaster = proxyquire('../lib/platforms/toaster', {'../util/spawn': fakeSpawn });
+      }
+
+      toaster.notify({ title: 'title', message: 'message', debug: debug }, done);
+    });
+
     it('no notifications', function (done) {
       var noNotes = require('../lib/platforms/no-notifications');
       expect(noNotes.name).to.equal('no-notifications');
