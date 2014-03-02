@@ -44,7 +44,7 @@ Create a pull request!
 
 *No install needed in Ubuntu.*
 
-I created an Ubuntu virutal machine and it had `notify-send` in the path.
+I created an Ubuntu virtual machine and it had `notify-send` in the path.
 
 I don't use Linux frequently so I don't know if this utility is available for other distros.
 

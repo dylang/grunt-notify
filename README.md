@@ -174,7 +174,7 @@ Create a pull request!
 
 *No install needed in Ubuntu.*
 
-I created an Ubuntu virutal machine and it had `notify-send` in the path.
+I created an Ubuntu virtual machine and it had `notify-send` in the path.
 
 I don't use Linux frequently so I don't know if this utility is available for other distros.
 
@@ -206,18 +206,18 @@ I'm [dylang](https://twitter.com/dylang) on Twitter and other places.
 
 Some of my other Node projects:
 
-| Name | Description | Npm |
+| Name | Description | Github Stars | Npm Installs |
 |---|---|--:|--:|
-| [`grunt-prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | [![grunt-prompt](https://nodei.co/npm/grunt-prompt.png?downloads=true "grunt-prompt")](https://nodei.co/npm/grunt-prompt) |
-| [`rss`](https://github.com/dylang/node-rss) | RSS feed generator. A really simple API to add RSS feeds to any project. | [![rss](https://nodei.co/npm/rss.png?downloads=true "rss")](https://nodei.co/npm/rss) |
-| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | [![shortid](https://nodei.co/npm/shortid.png?downloads=true "shortid")](https://nodei.co/npm/shortid) |
-| [`xml`](https://github.com/dylang/node-xml) | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | [![xml](https://nodei.co/npm/xml.png?downloads=true "xml")](https://nodei.co/npm/xml) |
-| [`anthology`](https://github.com/dylang/anthology) | Module information and stats for any @npmjs user | [![anthology](https://nodei.co/npm/anthology.png?downloads=true "anthology")](https://nodei.co/npm/anthology) |
-| [`grunt-attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal | [![grunt-attention](https://nodei.co/npm/grunt-attention.png?downloads=true "grunt-attention")](https://nodei.co/npm/grunt-attention) |
-| [`observatory`](https://github.com/dylang/observatory) | Beautiful UI for showing tasks running on the command line. | [![observatory](https://nodei.co/npm/observatory.png?downloads=true "observatory")](https://nodei.co/npm/observatory) |
-| [`changelog`](https://github.com/dylang/changelog) | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | [![changelog](https://nodei.co/npm/changelog.png?downloads=true "changelog")](https://nodei.co/npm/changelog) |
-| [`logging`](https://github.com/dylang/logging) | Super sexy color console logging with cluster support. | [![logging](https://nodei.co/npm/logging.png?downloads=true "logging")](https://nodei.co/npm/logging) |
-| [`grunt-cat`](https://github.com/dylang/grunt-cat) | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | [![grunt-cat](https://nodei.co/npm/grunt-cat.png?downloads=true "grunt-cat")](https://nodei.co/npm/grunt-cat) |
+| [`grunt-prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | 142 | 6,885 |
+| [`rss`](https://github.com/dylang/node-rss) | RSS feed generator. A really simple API to add RSS feeds to any project. | 177 | 98,802 |
+| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | 129 | 22,984 |
+| [`xml`](https://github.com/dylang/node-xml) | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | 35 | 180,625 |
+| [`anthology`](https://github.com/dylang/anthology) | Module information and stats for any @npmjs user | _New!_ | _TBD_ |
+| [`grunt-attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal | _New!_ | 336 |
+| [`observatory`](https://github.com/dylang/observatory) | Beautiful UI for showing tasks running on the command line. | _New!_ | 81 |
+| [`changelog`](https://github.com/dylang/changelog) | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | 51 | 2,081 |
+| [`logging`](https://github.com/dylang/logging) | Super sexy color console logging with cluster support. | 21 | 8,793 |
+| [`grunt-cat`](https://github.com/dylang/grunt-cat) | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | _New!_ | 396 |
 
 _This list was generated using [anthology](https://github.com/dylang/anthology)._
 
@@ -230,7 +230,7 @@ Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Sunday, February 9, 2014._ [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dylang/grunt-notify/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Google Analytics](https://ga-beacon.appspot.com/UA-4820261-3/dylang/grunt-notify)](https://github.com/igrigorik/ga-beacon)
+_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Sunday, March 2, 2014._ [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dylang/grunt-notify/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Google Analytics](https://ga-beacon.appspot.com/UA-4820261-3/dylang/grunt-notify)](https://github.com/igrigorik/ga-beacon)
 
 
 <!---
