@@ -1,3 +1,5 @@
+* 2 March 2015 - 0.2.19
+ * Add duration to notify-send
 * 2 March 2015 - 0.2.18
  * Avoid multiple notifications with notify-send
 * 5 January 2015 - 0.2.17

@@ -180,6 +180,8 @@ I don't use Linux frequently so I don't know if this utility is available for ot
 
 [notify-send man page](http://manpages.ubuntu.com/manpages/gutsy/man1/notify-send.1.html).
 
+`notify-send` has an addition `duration` option which takes a number seconds. The default is 3 seconds.
+
 #### Chrome
 
 *Not supported yet.*
