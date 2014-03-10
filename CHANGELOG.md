@@ -1,9 +1,13 @@
+* 10 March 2014 - 0.2.20
+ * Grunt icon in OS X native notifications.
+ * Fix bug when it would catch errors with no messages.
+ * Fix dates in changelog.
 * 2 March 2014 - 0.2.19
  * Add duration to notify-send
 * 2 March 2014 - 0.2.18
  * Avoid multiple notifications with notify-send
 * 5 January 2014 - 0.2.17
- * New documenation system powered by grunt-readme.
+ * New documentation system powered by grunt-readme.
  * New section in docs about the notification systems.
  * More doc improvements coming in the future.
 * 7 November 2013 - 0.2.16
