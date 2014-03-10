@@ -1,20 +1,20 @@
-* 2 March 2015 - 0.2.19
+* 2 March 2014 - 0.2.19
  * Add duration to notify-send
-* 2 March 2015 - 0.2.18
+* 2 March 2014 - 0.2.18
  * Avoid multiple notifications with notify-send
-* 5 January 2015 - 0.2.17
+* 5 January 2014 - 0.2.17
  * New documenation system powered by grunt-readme.
  * New section in docs about the notification systems.
  * More doc improvements coming in the future.
-* 7 November 2014 - 0.2.16
+* 7 November 2013 - 0.2.16
  * Avoid duplicate messages.
-* 3 November 2014 - 0.2.15
+* 3 November 2013 - 0.2.15
  * Fixed issue with OS X 10.9 Mavericks. Unfortunately Apple took away the ability to customize the icon.
-* 29 October 2014 - 0.2.14
+* 29 October 2013 - 0.2.14
  * Since grunt-contrib-watch can overwrite grunt's warn and fatal functions, we now watch writeln as well for warnings and fatals.
-* 26 August 2014 - 0.2.13
+* 26 August 2013 - 0.2.13
  * Added Grunt icon to `notify-send`.
-* 24 August 2014 - 0.2.12
+* 24 August 2013 - 0.2.12
  * Fix bug causing exception with Semver in Linux, thanks to [@theefer](https://github.com/theefer).
  * Won't notify `Aborted due to warnings.` when there was already a more helpful notification.
  * More automated tests.
