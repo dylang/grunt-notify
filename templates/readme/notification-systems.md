@@ -34,7 +34,7 @@ Install **growlnotify** from the [growlnotify Page](http://www.growlforwindows.c
 
 #### Windows 8.1 Notifications
 
-*Not supported yet.*
+*Nothing to install.*
 
 Create a pull request!
 
@@ -42,7 +42,7 @@ Create a pull request!
 
 #### Notify-Send
 
-*No install needed in Ubuntu.*
+*Nothing to install.*
 
 I created an Ubuntu virtual machine and it had `notify-send` in the path.
 

@@ -18,6 +18,7 @@ Use `grunt readme` to regenerate.
 |---|---|---|
 | OS X | OS X Notification Center | ![OS X Notification Center](https://f.cloud.github.com/assets/51505/982681/4e63bf88-0814-11e3-8b57-e2f5f4c2e1c1.png "OS X Notification Center") |
 | OS X | Growl for Mac | ![Growl for Mac](https://f.cloud.github.com/assets/51505/982676/43c372da-0814-11e3-89e5-0cb0f45f50e1.png "Growl for Mac") |
+| Windows 8 | Windows 8 notifications | ![Windows 8 Notifications](https://cloud.githubusercontent.com/assets/51505/2809792/d7d3f212-cd83-11e3-8bcf-ee0125568770.png "Windows 8 Notifications") |
 | Windows | Growl for Windows | ![Growl for Windows](https://f.cloud.github.com/assets/51505/982679/4a199542-0814-11e3-93d9-5c46e2aed2d3.png "Growl for Windows") |
 | Windows | Snarl | ![Snarl](https://f.cloud.github.com/assets/51505/982685/5419c058-0814-11e3-8976-54a811f21c92.png "Snarl") |
 | Linux | Notify-Send | ![Notify-Send](https://f.cloud.github.com/assets/51505/1030946/056631f4-0ecb-11e3-97cb-46e12c484f8b.png "Notify-Send") |
@@ -164,7 +165,7 @@ Install **growlnotify** from the [growlnotify Page](http://www.growlforwindows.c
 
 ##### Windows 8.1 Notifications
 
-*Not supported yet.*
+*Nothing to install.*
 
 Create a pull request!
 
@@ -172,15 +173,13 @@ Create a pull request!
 
 ##### Notify-Send
 
-*No install needed in Ubuntu.*
+*Nothing to install.*
 
-I created an Ubuntu virtual machine and it had `notify-send` in the path.
+I created an Ubuntu virutal machine and it had `notify-send` in the path.
 
 I don't use Linux frequently so I don't know if this utility is available for other distros.
 
 [notify-send man page](http://manpages.ubuntu.com/manpages/gutsy/man1/notify-send.1.html).
-
-`notify-send` has an addition `duration` option which takes a number seconds. The default is 3 seconds.
 
 #### Chrome
 
@@ -210,16 +209,17 @@ Some of my other Node projects:
 
 | Name | Description | Github Stars | Npm Installs |
 |---|---|--:|--:|
-| [`grunt-prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | 142 | 6,885 |
-| [`rss`](https://github.com/dylang/node-rss) | RSS feed generator. A really simple API to add RSS feeds to any project. | 177 | 98,802 |
-| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | 129 | 22,984 |
-| [`xml`](https://github.com/dylang/node-xml) | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | 35 | 180,625 |
+| [`grunt-prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | 188 | 2,828 |
+| [`rss`](https://github.com/dylang/node-rss) | RSS feed generator. A really simple API to add RSS feeds to any project. | 199 | 16,822 |
+| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | 163 | 4,039 |
+| [`xml`](https://github.com/dylang/node-xml) | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | 41 | 21,485 |
+| [`grunt-attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal | _New!_ | 816 |
+| [`flowdock-refined`](https://github.com/dylang/flowdock-refined) | Flowdock desktop app custom UI | _New!_ | 31 |
 | [`anthology`](https://github.com/dylang/anthology) | Module information and stats for any @npmjs user | _New!_ | _TBD_ |
-| [`grunt-attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal | _New!_ | 336 |
-| [`observatory`](https://github.com/dylang/observatory) | Beautiful UI for showing tasks running on the command line. | _New!_ | 81 |
-| [`changelog`](https://github.com/dylang/changelog) | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | 51 | 2,081 |
-| [`logging`](https://github.com/dylang/logging) | Super sexy color console logging with cluster support. | 21 | 8,793 |
-| [`grunt-cat`](https://github.com/dylang/grunt-cat) | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | _New!_ | 396 |
+| [`observatory`](https://github.com/dylang/observatory) | Beautiful UI for showing tasks running on the command line. | _New!_ | 17 |
+| [`changelog`](https://github.com/dylang/changelog) | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | 53 | 80 |
+| [`grunt-cat`](https://github.com/dylang/grunt-cat) | Echo a file to the terminal. Works with text, figlets, ascii art, and full-color ansi. | _New!_ | 59 |
+| [`logging`](https://github.com/dylang/logging) | Super sexy color console logging with cluster support. | 21 | 171 |
 
 _This list was generated using [anthology](https://github.com/dylang/anthology)._
 
@@ -232,7 +232,7 @@ Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Monday, March 10, 2014._ [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dylang/grunt-notify/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Google Analytics](https://ga-beacon.appspot.com/UA-4820261-3/dylang/grunt-notify)](https://github.com/igrigorik/ga-beacon)
+_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Saturday, April 26, 2014._ [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/dylang/grunt-notify/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Google Analytics](https://ga-beacon.appspot.com/UA-4820261-3/dylang/grunt-notify)](https://github.com/igrigorik/ga-beacon)
 
 
 <!---
