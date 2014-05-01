@@ -47,6 +47,18 @@ describe('grunt-notify', function () {
       console.log(cmd, args.join(' '));
       cb();
     }
+    
+    function imageArgumentAssertions(cmd, args, cb) {
+      fakeSpawn(cmd, args, function () {
+        var imageArgument = args[0].substr(3), // argument after /i:
+            hasSpaces = / /.test(imageArgument);
+        expect(imageArgument).to.match(/\//g);
+        if (hasSpaces) {
+          expect(imageArgument).to.match(/^\".+\"$/);
+        }
+        cb();
+      });
+    }
 
     var options = {
       debug: debug
@@ -63,6 +75,14 @@ describe('grunt-notify', function () {
       }
 
       growl.notify({ title: 'title', message: 'message', debug: debug }, done);
+    });
+    
+    it('growl for windows image path set with *nix path separator', function (done) {
+      if (require('os').type() !== 'Windows_NT') return;
+      
+      var growl = proxyquire('../lib/platforms/growl-notify', { '../util/spawn': imageArgumentAssertions });
+
+      growl.notify({ title: 'title', message: 'message', debug: debug}, done);
     });
 
     it('notification center', function (done) {
