@@ -15,7 +15,9 @@ module.exports = function gruntTask(grunt) {
   var defaults = {
     enabled: true,
     max_jshint_notifications: 5,
-    title: guessProjectName()
+    title: guessProjectName(),
+	success: false,
+	duration: null
   };
 
   var notifyFail = require('../lib/hooks/notify-fail')(grunt, defaults);

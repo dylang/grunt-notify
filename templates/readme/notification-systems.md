@@ -52,6 +52,10 @@ I don't use Linux frequently so I don't know if this utility is available for ot
 
 `notify-send` has an addition `duration` option which takes a number seconds. The default is 3 seconds.
 
+Duration doesn't work natively on some versions of Ubuntu.
+
+Here is a fix: http://askubuntu.com/questions/128474/how-to-customize-on-screen-notifications
+
 ### Chrome
 
 *Not supported yet.*
