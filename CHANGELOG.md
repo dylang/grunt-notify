@@ -1,3 +1,6 @@
+* 7 Nov 2014 - 0.4.0
+ * Option for notification on success messages
+ * Duration option for notify-send
 * 7 Aug 2014 - 0.3.1
  * Updated dependencies
 * 26 April 2014 - 0.3.0
