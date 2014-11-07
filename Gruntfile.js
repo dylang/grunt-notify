@@ -93,7 +93,8 @@ module.exports = function(grunt) {
       all: [
         'Gruntfile.js',
         'tasks/**/*.js',
-        'tests/**/*'
+        'tests/**/*',
+        'lib/**/*'
       ],
       fixtures: [
         'test/fixtures/*.js'
