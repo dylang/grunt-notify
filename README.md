@@ -48,7 +48,9 @@ grunt.initConfig({
     options: {
       enabled: true,
       max_jshint_notifications: 5, // maximum number of notifications from jshint output
-      title: "Project Name" // defaults to the name in package.json, or will use project directory's name
+      title: "Project Name", // defaults to the name in package.json, or will use project directory's name
+      success: false, // whether successful grunt executions should be notified automatically
+      duration: 3 // the duration of notification in seconds, for `notify-send only
     }
   }
 });
@@ -174,6 +176,10 @@ I don't use Linux frequently so I don't know if this utility is available for ot
 [notify-send man page](http://manpages.ubuntu.com/manpages/gutsy/man1/notify-send.1.html).
 
 `notify-send` has an addition `duration` option which takes a number seconds. The default is 3 seconds.
+
+Duration doesn't work natively on some versions of Ubuntu.
+
+Here is a fix: http://askubuntu.com/questions/128474/how-to-customize-on-screen-notifications
 
 #### Chrome
 
