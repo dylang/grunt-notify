@@ -21,6 +21,13 @@ module.exports = function(grunt) {
           message: 'This is a "Notify Message" test!'
         }
       },
+      success: {
+        options: {
+          type: 'success',
+          title: 'Success',
+          message: 'This is a success message!'
+        }
+      },
       just_message: {
         options: {
           message: 'Just Message'
