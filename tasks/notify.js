@@ -22,7 +22,7 @@ module.exports = function gruntTask(grunt) {
     var options = this.options(defaults);
     var done = this.async();
 
-    options.image = path.resolve(options.image);
+    options.image = path.resolve(options.image || '');
     if (options.message) {
       notify(options, done);
     } else {
