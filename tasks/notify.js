@@ -8,6 +8,7 @@
 'use strict';
 module.exports = function gruntTask(grunt) {
 
+  var path = require('path');
   var notify = require('../lib/notify-lib');
   var guessProjectName = require('../lib/util/guessProjectName');
 
@@ -21,6 +22,7 @@ module.exports = function gruntTask(grunt) {
     var options = this.options(defaults);
     var done = this.async();
 
+    options.image = path.resolve(options.image);
     if (options.message) {
       notify(options, done);
     } else {
