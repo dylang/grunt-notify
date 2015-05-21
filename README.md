@@ -130,7 +130,9 @@ grunt.registerTask('server', [
 #### Options
 * `title` _optional_ Notification title
 * `message` _required_ Notification message
-
+* `platform` _optional_ Notification platform
+  * `name` _optional_ Notification platform name, one of: 'growl-notify', 'hey-snarl', 'notification-center', 'notify-send', 'toaster', 'chrome'
+  * `port` _optional_ Used only with Chrome platform. Port on which Chrome Notification Server is launched (default is 8989).
 
 
 ### Tests
