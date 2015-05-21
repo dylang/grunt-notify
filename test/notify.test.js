@@ -117,6 +117,24 @@ describe('grunt-notify', function () {
       toaster.notify({ title: 'title', message: 'message', debug: debug }, done);
     });
 
+    it('chrome', function (done) {
+      var chrome = require('../lib/platforms/chrome-notifications');
+      expect(chrome.name).to.equal('chrome');
+      expect(chrome.notify).to.be.a.function;
+
+      chrome.supported(options, function( isSupported ) {
+        expect(isSupported).to.be.a.boolean;
+
+        if ( !isSupported ) {
+          var fakeHttp = require('../lib/util/fakeHttp');
+          chrome = proxyquire('../lib/platforms/chrome-notifications', {'http' : fakeHttp });
+        }
+
+        chrome.notify({ title: 'title', message: 'message', debug: debug }, done);
+      });           
+      
+    });
+
     it('no notifications', function (done) {
       var noNotes = require('../lib/platforms/no-notifications');
       expect(noNotes.name).to.equal('no-notifications');
