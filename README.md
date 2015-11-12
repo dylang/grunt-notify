@@ -1,4 +1,4 @@
-## grunt-notify  [![Build Status](http://img.shields.io/travis/dylang/grunt-notify.svg?style=flat-square)](https://travis-ci.org/dylang/grunt-notify) [![grunt-notify](http://img.shields.io/npm/dm/grunt-notify.svg?style=flat-square)](https://www.npmjs.org/package/grunt-notify)
+## grunt-notify  [![Build Status](http://img.shields.io/travis/dylang/grunt-notify.svg)](https://travis-ci.org/dylang/grunt-notify) [![grunt-notify](http://img.shields.io/npm/dm/grunt-notify.svg)](https://www.npmjs.org/package/grunt-notify)
 
 > Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send.
 
@@ -195,19 +195,19 @@ Run `grunt -v` (for `verbose` mode) to show `grunt-notify` debug messages. It wi
 
 
 
-### About the Author [![@dylang](https://img.shields.io/badge/github-dylang-green.svg?style=flat-square)](https://github.com/dylang) [![@dylang](https://img.shields.io/badge/twitter-dylang-blue.svg?style=flat-square)](https://twitter.com/dylang)
+### About the Author
 
-Hi! Thanks for checking `grunt-notify`! My name is **Dylan Greene**. When not overwhelmed with my two young kids I enjoy contributing
-to the open source community. I'm also a tech lead at [Opower](http://opower.com).
+Hi! Thanks for checking out this project! My name is **Dylan Greene**. When not overwhelmed with my two young kids I enjoy contributing
+to the open source community. I'm also a tech lead at [Opower](http://opower.com). [![@dylang](https://img.shields.io/badge/github-dylang-green.svg)](https://github.com/dylang) [![@dylang](https://img.shields.io/badge/twitter-dylang-blue.svg)](https://twitter.com/dylang)
 
 Here's some of my other Node projects:
 
 | Name | Description | npm&nbsp;Downloads |
-|---|---|--:|--:|
-| [`grunt‑prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | [![grunt-prompt](https://img.shields.io/npm/dm/grunt-prompt.svg?style=flat-square)](https://www.npmjs.org/package/grunt-prompt) |
-| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | [![shortid](https://img.shields.io/npm/dm/shortid.svg?style=flat-square)](https://www.npmjs.org/package/shortid) |
+|---|---|---|
 | [`npm‑check`](https://github.com/dylang/npm-check) | Check for outdated, incorrect, and unused dependencies. | [![npm-check](https://img.shields.io/npm/dm/npm-check.svg?style=flat-square)](https://www.npmjs.org/package/npm-check) |
+| [`shortid`](https://github.com/dylang/shortid) | Amazingly short non-sequential url-friendly unique id generator. | [![shortid](https://img.shields.io/npm/dm/shortid.svg?style=flat-square)](https://www.npmjs.org/package/shortid) |
 | [`rss`](https://github.com/dylang/node-rss) | RSS feed generator. Add RSS feeds to any project. Supports enclosures and GeoRSS. | [![rss](https://img.shields.io/npm/dm/rss.svg?style=flat-square)](https://www.npmjs.org/package/rss) |
+| [`grunt‑prompt`](https://github.com/dylang/grunt-prompt) | Interactive prompt for your Grunt config using console checkboxes, text input with filtering, password fields. | [![grunt-prompt](https://img.shields.io/npm/dm/grunt-prompt.svg?style=flat-square)](https://www.npmjs.org/package/grunt-prompt) |
 | [`xml`](https://github.com/dylang/node-xml) | Fast and simple xml generator. Supports attributes, CDATA, etc. Includes tests and examples. | [![xml](https://img.shields.io/npm/dm/xml.svg?style=flat-square)](https://www.npmjs.org/package/xml) |
 | [`changelog`](https://github.com/dylang/changelog) | Command line tool (and Node module) that generates a changelog in color output, markdown, or json for modules in npmjs.org's registry as well as any public github.com repo. | [![changelog](https://img.shields.io/npm/dm/changelog.svg?style=flat-square)](https://www.npmjs.org/package/changelog) |
 | [`grunt‑attention`](https://github.com/dylang/grunt-attention) | Display attention-grabbing messages in the terminal | [![grunt-attention](https://img.shields.io/npm/dm/grunt-attention.svg?style=flat-square)](https://www.npmjs.org/package/grunt-attention) |
@@ -219,12 +219,13 @@ _This list was generated using [anthology](https://github.com/dylang/anthology).
 
 
 ### License
-Copyright (c) 2014 Dylan Greene, contributors.
+Copyright (c) 2015 Dylan Greene, contributors.
 
 Released under the [MIT license](https://tldrlegal.com/license/mit-license).
 
 Screenshots are [CC BY-SA](http://creativecommons.org/licenses/by-sa/4.0/) (Attribution-ShareAlike).
 
 ***
-_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Friday, November 7, 2014._
+_Generated using [grunt-readme](https://github.com/assemble/grunt-readme) with [grunt-templates-dylang](https://github.com/dylang/grunt-templates-dylang) on Wednesday, November 11, 2015._
+_To make changes to this document look in `/templates/readme/`
 

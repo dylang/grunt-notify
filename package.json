@@ -1,7 +1,7 @@
 {
   "name": "grunt-notify",
-  "description": "Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send.",
-  "version": "0.4.1",
+  "description": "Automatic desktop notifications for Grunt errors and warnings. Supports OS X, Windows, Linux.",
+  "version": "0.4.2",
   "homepage": "https://github.com/dylang/grunt-notify",
   "author": {
     "name": "Dylan Greene",
@@ -9,37 +9,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/dylang/grunt-notify.git"
+    "url": "https://github.com/dylang/grunt-notify"
   },
-  "bugs": {
-    "url": "https://github.com/dylang/grunt-notify/issues"
-  },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/dylang/grunt-notify/blob/master/LICENSE-MIT"
-    }
-  ],
+  "license": "MIT",
   "main": "Gruntfile.js",
-  "engines": {
-    "node": ">= 0.10.0"
-  },
   "scripts": {
     "test": "grunt test"
   },
   "devDependencies": {
-    "chai": "^1.9.2",
-    "grunt-contrib-jshint": "^0.10.0",
+    "chai": "^3.4.1",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-mocha-test": "^0.12.0",
-    "grunt-release": "^0.7.0",
-    "grunt-templates-dylang": "^1.0.0",
-    "load-grunt-tasks": "^1.0.0",
-    "proxyquire": "^1.0.1",
-    "time-grunt": "^1.0.0"
-  },
-  "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt-mocha-test": "^0.12.7",
+    "grunt-release": "^0.13.0",
+    "grunt-templates-dylang": "^1.0.10",
+    "load-grunt-tasks": "^3.3.0",
+    "proxyquire": "^1.7.3",
+    "time-grunt": "^1.2.2"
   },
   "keywords": [
     "gruntplugin",
@@ -55,8 +42,8 @@
     "automatic"
   ],
   "dependencies": {
-    "semver": "^4.1.0",
+    "semver": "^5.0.3",
     "stack-parser": "~0.0.1",
-    "which": "~1.0.5"
+    "which": "^1.2.0"
   }
 }
