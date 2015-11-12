@@ -1,6 +1,6 @@
 ## grunt-notify  [![Build Status](http://img.shields.io/travis/dylang/grunt-notify.svg)](https://travis-ci.org/dylang/grunt-notify) [![grunt-notify](http://img.shields.io/npm/dm/grunt-notify.svg)](https://www.npmjs.org/package/grunt-notify)
 
-> Automatic desktop notifications for Grunt errors and warnings using Growl for OS X or Windows, Mountain Lion and Mavericks Notification Center, and Notify-Send.
+> Automatic desktop notifications for Grunt errors and warnings. Supports OS X, Windows, Linux.
 
 
 
