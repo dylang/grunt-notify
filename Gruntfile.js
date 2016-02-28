@@ -12,9 +12,9 @@ module.exports = function(grunt) {
 
   require('time-grunt')(grunt);
 
-  grunt.initConfig({
+  grunt.initConfig({    
     // Configuration to be run (and then tested).
-    notify: {
+    notify: {      
       custom_options: {
         options: {
           title: 'Notify Title',
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
       example: {
         options: {
           title: 'Doodle or Die',  // optional
-          message: 'Deploy to production success!' //required
+          message: 'Deploy to production success!' //required,                    
         }
       },
       directory: {
@@ -42,6 +42,16 @@ module.exports = function(grunt) {
         options: {
           title: 'Directory',
           message: 'Line 1\nLine 2\nLine3\nLine 4\nLine 5.'
+        }
+      },
+      chrome: {
+        options: {
+          title: 'Notify Title',
+          message: 'This is a "Notify Message" test!',
+          platform : {
+            name : 'chrome',
+            port : 8989
+          }
         }
       }
     },
@@ -108,7 +118,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', [
+  grunt.registerTask('test', [    
     'jshint',
     'notify',
     'mochaTest'

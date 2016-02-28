@@ -14,6 +14,7 @@
 | Windows | Growl for Windows | ![Growl for Windows](https://f.cloud.github.com/assets/51505/982679/4a199542-0814-11e3-93d9-5c46e2aed2d3.png "Growl for Windows") |
 | Windows | Snarl | ![Snarl](https://f.cloud.github.com/assets/51505/982685/5419c058-0814-11e3-8976-54a811f21c92.png "Snarl") |
 | Linux | Notify-Send | ![Notify-Send](https://f.cloud.github.com/assets/51505/1030946/056631f4-0ecb-11e3-97cb-46e12c484f8b.png "Notify-Send") |
+| Cross-platform | Chrome | ![Chrome](screenshots/chrome-test.png "Chrome") |
 
 
 
@@ -50,7 +51,11 @@ grunt.initConfig({
       max_jshint_notifications: 5, // maximum number of notifications from jshint output
       title: "Project Name", // defaults to the name in package.json, or will use project directory's name
       success: false, // whether successful grunt executions should be notified automatically
-      duration: 3 // the duration of notification in seconds, for `notify-send only
+      duration: 3, // the duration of notification in seconds, for `notify-send only
+      platform: {
+        // manually specify which platform to use
+        name: "any" // 'growl-notify', 'hey-snarl', 'notification-center', 'notify-send', 'toaster', 'chrome'
+      }
     }
   }
 });
@@ -97,6 +102,16 @@ grunt.initConfig({
       options: {
         message: 'Server is ready!'
       }
+    },
+    chrome: {
+      options: {
+        title: 'Notify Title',
+        message: 'This message is shown by Chrome or not shown at all!',
+        platform : {
+          name : 'chrome',
+          port : 8989
+        }
+      }
     }
   }
 });
@@ -115,7 +130,9 @@ grunt.registerTask('server', [
 #### Options
 * `title` _optional_ Notification title
 * `message` _required_ Notification message
-
+* `platform` _optional_ Notification platform
+  * `name` _optional_ Notification platform name, one of: 'growl-notify', 'hey-snarl', 'notification-center', 'notify-send', 'toaster', 'chrome'
+  * `port` _optional_ Used only with Chrome platform. Port on which Chrome Notification Server is launched (default is 8989).
 
 
 ### Tests
@@ -182,11 +199,11 @@ Duration doesn't work natively on some versions of Ubuntu.
 Here is a fix: http://askubuntu.com/questions/128474/how-to-customize-on-screen-notifications
 
 #### Chrome
+*Requires extension for Chrome*
 
-*Not supported yet.*
+Chrome notification system is supported by [chrome extension](https://chrome.google.com/webstore/detail/chrome-notification-serve/cahgolnbmcechdpojohdlcjbnhadfbne?utm_source=chrome-ntp-icon). Install it and launch (unfortunately chrome does't have autorun system so you should launch it every time you restart your machine).
 
-Chrome has a notification system but I'm not sure if it's possible to use from a command-line Node app. Somebody could
-probably create a Chrome Plugin helper for this.
+When grunt-notify searches for supported platform it checks Chrome at the end, so if you have any other notification system it will be used instead. To force usage of chrome as notification system you should manually set it as a platform in task options.
 
 #### Notifications aren't showing
 
