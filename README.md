@@ -157,6 +157,10 @@ If you have downloaded and installed Snarl from [Snarl's web site](http://snarl.
 
 Install **growlnotify** from the [growlnotify Page](http://www.growlforwindows.com/gfw/help/growlnotify.aspx).
 
+You also need to include Growl to Windows system Path. Typically this is in ``C:\Program Files\Growl for Windows`` Here's how to do that in Windows 7.
+
+![Windows path](screenshots/growl-windows-path.gif)
+
 ##### Windows 8.1 Notifications
 
 *Nothing to install.*
