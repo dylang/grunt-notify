@@ -21,7 +21,14 @@ module.exports = function gruntTask(grunt) {
     var options = this.options(defaults);
     var done = this.async();
 
-    if (options.message) {
+    // If no enabled property exists, default to true
+    if (!options.hasOwnProperty("enabled")) {
+      options.enabled = true;
+    }
+
+    if (!options.enabled) { 
+      done();
+    } else if (options.message) {
       notify(options, done);
     } else {
       done(new Error('Notify message is required. Make sure your notify configuration is inside an options object.'));
