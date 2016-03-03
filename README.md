@@ -167,12 +167,21 @@ Create a pull request!
 
 ##### Notify-Send
 
+###### Ubuntu
 *Nothing to install.*
 
 I created an Ubuntu virtual machine and it had `notify-send` in the path.
 
-I don't use Linux frequently so I don't know if this utility is available for other distros.
+###### Debian
+You have to install the ruby-notify package.
 
+###### Fedora, Archlinux
+You have to install the libnotify package.
+
+###### SuSe
+You have to install the libnotify-tools package.
+
+###### Note about Ubuntu and ```notify-send```
 [notify-send man page](http://manpages.ubuntu.com/manpages/gutsy/man1/notify-send.1.html).
 
 `notify-send` has an addition `duration` option which takes a number seconds. The default is 3 seconds.
